@@ -1,15 +1,16 @@
-module ler (saida);
+module ler (instrucao,PC);
     //input [31:0] instrucao;
-    output reg [31:0] saida;
-    reg [31:0] memory [0:0];
+    input wire PC;
+    output reg [31:0] instrucao;
+    reg [31:0] memory [0:6];
 
     initial begin
-        $readmemb("assemble.bin", memory); // Lendo instruções em formato binário
+        $readmemb("assembler.bin", memory); // Lendo instruções em formato binário
         //$display("Instrucao %0d: %b", i+1, memory[i]);
-        saida <= memory[0];
+        instrucao <= memory[PC];
     end
     
-    //assign saida = memory;
+    //assign instrucao = memory;
 
 endmodule
 
