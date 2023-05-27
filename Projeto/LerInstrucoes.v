@@ -1,5 +1,4 @@
 module ler (instrucao,PC);
-    //input [31:0] instrucao;
     input wire PC;
     output reg [31:0] instrucao;
     reg [31:0] memory [0:6];
