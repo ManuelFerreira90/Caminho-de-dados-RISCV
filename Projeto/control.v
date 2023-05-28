@@ -1,14 +1,15 @@
-module controle (tipo, regiwrite, aluop, memwrite, memread, alucontrol, funct3, aluresult1);
+module controle (tipo, regiwrite, aluop, memwrite, memread, alucontrol, funct3, aluresult1, clk);
     input wire [2:0] tipo;
     input wire [2:0] funct3;
     input wire aluresult1;
+    input wire clk;
     output reg regiwrite;
     output reg [1:0] aluop;
     output reg memwrite;
     output reg memread;
     output reg [3:0] alucontrol;
 
-    always @(*)begin
+    always @(posedge clk or negedge clk)begin
         case (tipo)
             3'b000: begin //lw
                 regiwrite <= 1'b1;

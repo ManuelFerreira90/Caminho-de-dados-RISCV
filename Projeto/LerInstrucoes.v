@@ -1,5 +1,6 @@
-module ler (instrucao,PC);
-    input wire PC;
+module ler (instrucao, PC, clk);
+    input wire [31:0] PC;
+    input wire clk;
     output reg [31:0] instrucao;
     reg [31:0] memory [0:6];
 
@@ -8,8 +9,11 @@ module ler (instrucao,PC);
         //$display("Instrucao %0d: %b", i+1, memory[i]);
         instrucao <= memory[PC];
     end
-    
-    //assign instrucao = memory;
+
+    always @(posedge clk or negedge clk) begin
+        instrucao <= memory[PC];
+    end
+
 
 endmodule
 
