@@ -10,7 +10,7 @@ module ler (instrucao, PC, clk);
         instrucao <= memory[PC];
     end
 
-    always @(posedge clk or negedge clk) begin
+    always @(posedge clk) begin
         instrucao <= memory[PC];
     end
 
