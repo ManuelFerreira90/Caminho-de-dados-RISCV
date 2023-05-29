@@ -43,9 +43,8 @@ module teste;
     reg [2:0] estado;
 
     initial begin
-        $dumpfile("waveform.vcd");
+        $dumpfile("wavefile.vcd");
         $dumpvars;
-        
 
         estado <= IF;
     end
