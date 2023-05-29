@@ -9,7 +9,7 @@ module controle (tipo, regiwrite, aluop, memwrite, memread, alucontrol, funct3, 
     output reg memread;
     output reg [3:0] alucontrol;
 
-    always @(posedge clk or negedge clk)begin
+    always @(posedge clk)begin
         case (tipo)
             3'b000: begin //lw
                 regiwrite <= 1'b1;

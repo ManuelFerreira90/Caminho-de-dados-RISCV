@@ -1,4 +1,4 @@
-module calcpc (PC, clk);
+module pc (PC, clk);
   input wire clk;
   output reg [31:0] PC;
 

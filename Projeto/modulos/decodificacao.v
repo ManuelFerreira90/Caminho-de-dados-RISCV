@@ -1,4 +1,4 @@
-module decod (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate, tipo, clk);
+module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate, tipo, clk);
     //input wire clock,
     input wire [31:0] instrucao;
     input wire clk;
@@ -11,7 +11,7 @@ module decod (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate, tipo, 
     output reg [11:0] immediate; 
     output reg [2:0] tipo;
 
-    always @(posedge clk or negedge clk) begin
+    always @(posedge clk) begin
     opcode <= instrucao [6:0];
     case (opcode[6:4]) 
       3'b000: begin //formato i

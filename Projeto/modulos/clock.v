@@ -1,4 +1,4 @@
-module geraclock (clk);
+module clock (clk);
     output reg clk;
 
     initial begin

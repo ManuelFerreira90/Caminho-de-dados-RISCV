@@ -1,12 +1,12 @@
-`include "LerInstrucoes.v"
-`include "decodificacao.v"
-`include "control.v"
-`include "pc.v"
-`include "clock.v"
+`include "modulos/lerinstrucao.v"
+`include "modulos/decodificacao.v"
+`include "modulos/controle.v"
+`include "modulos/pc.v"
+`include "modulos/clock.v"
 
 //lw sw sub xor addi srl beq
 
-module teste;
+module main;
     wire [31:0] instrucao;
     wire [6:0] opcode;
     wire [4:0] rd;
@@ -49,13 +49,13 @@ module teste;
         estado <= IF;
     end
 
-    geraclock geraclk(.clk(clk));
-    calcpc resultpc(.PC(PC), .clk(clk));
-    ler leitura(.instrucao(instrucao), .PC(PC), .clk(clk));
-    decod decodificar(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk));
+    clock geraclk(.clk(clk));
+    pc resultpc(.PC(PC), .clk(clk));
+    lerinstrucao leitura(.instrucao(instrucao), .PC(PC), .clk(clk));
+    decodificacao decodificar(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk));
     controle controlador(.tipo(tipo), .regiwrite(regiwrite), .aluop(aluop), .memwrite(memwrite), .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .aluresult1(aluresult1), .clk(clk));
 
-    always @(posedge clk or negedge clk) begin
+    always @(posedge clk) begin
         case(estado)
         IF : begin
             $display("Instrucao : %b", instrucao);
