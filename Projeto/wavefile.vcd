@@ -1,5 +1,5 @@
 $date
-	Mon May 29 19:16:16 2023
+	Mon May 29 20:38:22 2023
 $end
 $version
 	Icarus Verilog
@@ -8,66 +8,72 @@ $timescale
 	1s
 $end
 $scope module main $end
-$var wire 1 ! aluresult1 $end
-$var wire 3 " tipo [2:0] $end
-$var wire 5 # rs2 [4:0] $end
-$var wire 5 $ rs1 [4:0] $end
-$var wire 1 % regiwrite $end
-$var wire 5 & rd [4:0] $end
-$var wire 7 ' opcode [6:0] $end
-$var wire 1 ( memwrite $end
+$var wire 3 ! tipo [2:0] $end
+$var wire 5 " rs2 [4:0] $end
+$var wire 5 # rs1 [4:0] $end
+$var wire 1 $ regiwrite $end
+$var wire 5 % rd [4:0] $end
+$var wire 7 & opcode [6:0] $end
+$var wire 1 ' memwrite $end
+$var wire 1 ( memtoreg $end
 $var wire 1 ) memread $end
 $var wire 32 * instrucao [31:0] $end
 $var wire 12 + immediate [11:0] $end
 $var wire 7 , funct7 [6:0] $end
 $var wire 3 - funct3 [2:0] $end
 $var wire 1 . clk $end
-$var wire 2 / aluop [1:0] $end
-$var wire 4 0 alucontrol [3:0] $end
-$var wire 32 1 PC [31:0] $end
-$var reg 3 2 estado [2:0] $end
+$var wire 1 / branch $end
+$var wire 1 0 alusrc $end
+$var wire 2 1 aluop [1:0] $end
+$var wire 4 2 alucontrol [3:0] $end
+$var wire 32 3 PC [31:0] $end
+$var reg 3 4 estado [2:0] $end
 $scope module controlador $end
-$var wire 1 ! aluresult1 $end
-$var wire 3 3 tipo [2:0] $end
-$var wire 3 4 funct3 [2:0] $end
+$var wire 3 5 tipo [2:0] $end
+$var wire 3 6 funct3 [2:0] $end
 $var wire 1 . clk $end
-$var reg 4 5 alucontrol [3:0] $end
-$var reg 2 6 aluop [1:0] $end
+$var reg 4 7 alucontrol [3:0] $end
+$var reg 2 8 aluop [1:0] $end
+$var reg 1 0 alusrc $end
+$var reg 1 / branch $end
 $var reg 1 ) memread $end
-$var reg 1 ( memwrite $end
-$var reg 1 % regiwrite $end
+$var reg 1 ( memtoreg $end
+$var reg 1 ' memwrite $end
+$var reg 1 $ regiwrite $end
 $upscope $end
 $scope module decodificar $end
-$var wire 32 7 instrucao [31:0] $end
+$var wire 32 9 instrucao [31:0] $end
 $var wire 1 . clk $end
-$var reg 3 8 funct3 [2:0] $end
-$var reg 7 9 funct7 [6:0] $end
-$var reg 12 : immediate [11:0] $end
-$var reg 7 ; opcode [6:0] $end
-$var reg 5 < rd [4:0] $end
-$var reg 5 = rs1 [4:0] $end
-$var reg 5 > rs2 [4:0] $end
-$var reg 3 ? tipo [2:0] $end
+$var reg 3 : funct3 [2:0] $end
+$var reg 7 ; funct7 [6:0] $end
+$var reg 12 < immediate [11:0] $end
+$var reg 7 = opcode [6:0] $end
+$var reg 5 > rd [4:0] $end
+$var reg 5 ? rs1 [4:0] $end
+$var reg 5 @ rs2 [4:0] $end
+$var reg 3 A tipo [2:0] $end
 $upscope $end
 $scope module geraclk $end
 $var reg 1 . clk $end
 $upscope $end
 $scope module leitura $end
 $var wire 1 . clk $end
-$var wire 32 @ PC [31:0] $end
-$var reg 32 A instrucao [31:0] $end
+$var wire 32 B PC [31:0] $end
+$var reg 32 C instrucao [31:0] $end
 $upscope $end
-$scope module resultpc $end
+$scope module somapc $end
 $var wire 1 . clk $end
-$var reg 32 B PC [31:0] $end
+$var reg 32 D PC [31:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+b0 D
+bx C
 b0 B
 bx A
-b0 @
+bx @
 bx ?
 bx >
 bx =
@@ -79,12 +85,12 @@ bx 8
 bx 7
 bx 6
 bx 5
-bx 4
-bx 3
-b0 2
-b0 1
-bx 0
-bx /
+b0 4
+b0 3
+bx 2
+bx 1
+x0
+x/
 0.
 bx -
 bx ,
@@ -92,203 +98,204 @@ bx +
 bx *
 x)
 x(
-bx '
+x'
 bx &
-x%
-bx $
+bx %
+x$
 bx #
 bx "
-z!
+bx !
 $end
 #1
-b1 1
-b1 @
+b1 3
 b1 B
+b1 D
 b110000011010000010000011 *
-b110000011010000010000011 7
-b110000011010000010000011 A
-b1 2
+b110000011010000010000011 9
+b110000011010000010000011 C
+b1 4
 1.
 #3
 0.
 #5
-b11 '
-b11 ;
+b0 4
+b11 &
+b11 =
 b100011010011000100011 *
-b100011010011000100011 7
-b100011010011000100011 A
-b10 1
-b10 @
+b100011010011000100011 9
+b100011010011000100011 C
+b10 3
 b10 B
+b10 D
 1.
-#6
-b0 2
 #7
 0.
 #9
-b11 1
-b11 @
+b11 3
 b11 B
+b11 D
 b1000000011000110000001010110011 *
-b1000000011000110000001010110011 7
-b1000000011000110000001010110011 A
-b0 "
-b0 3
-b0 ?
+b1000000011000110000001010110011 9
+b1000000011000110000001010110011 C
+b0 !
+b0 5
+b0 A
 b1 +
-b1 :
+b1 <
 b10 -
-b10 4
-b10 8
-b11 $
-b11 =
-b1100 &
-b1100 <
-b100011 '
-b100011 ;
-b1 2
+b10 6
+b10 :
+b11 #
+b11 ?
+b1100 %
+b1100 >
+b100011 &
+b100011 =
+b1 4
 1.
 #11
 0.
 #13
-b10 0
-b10 5
-1)
-0(
-b0 /
-b0 6
-1%
-b10 "
-b10 3
-b10 ?
-b0 -
 b0 4
+10
+1(
+0/
+b10 2
+b10 7
+1)
+0'
+b0 1
 b0 8
+1$
+b10 !
+b10 5
+b10 A
+b0 -
+b0 6
+b0 :
+b110 "
+b110 @
 b110 #
-b110 >
-b110 $
-b110 =
+b110 ?
 b10000000101 +
-b10000000101 :
-b110011 '
-b110011 ;
+b10000000101 <
+b110011 &
+b110011 =
 b10100101100001010110011 *
-b10100101100001010110011 7
-b10100101100001010110011 A
-b100 1
-b100 @
+b10100101100001010110011 9
+b10100101100001010110011 C
+b100 3
 b100 B
+b100 D
 1.
-#14
-b0 2
 #15
 0.
 #17
-b101 1
-b101 @
+b101 3
 b101 B
+b101 D
 b101000011000000110010011 *
-b101000011000000110010011 7
-b101000011000000110010011 A
-b11 "
-b11 3
-b11 ?
+b101000011000000110010011 9
+b101000011000000110010011 C
+b11 !
+b11 5
+b11 A
 b100 -
-b100 4
-b100 8
-b101 &
-b101 <
-b101 $
-b101 =
-b101 #
+b100 6
+b100 :
+b101 %
 b101 >
+b101 #
+b101 ?
+b101 "
+b101 @
 b0 ,
-b0 9
+b0 ;
 0)
-1(
-0%
-b1 2
+1'
+0$
+b1 4
 1.
 #19
 0.
 #21
-0(
-b10 /
-b10 6
-1%
-b0 -
 b0 4
-b0 8
-b11 &
-b11 <
-b11 $
-b11 =
-b1010 #
-b1010 >
-b10011 '
-b10011 ;
+00
+0(
+0'
+b10 1
+b10 8
+1$
+b0 -
+b0 6
+b0 :
+b11 %
+b11 >
+b11 #
+b11 ?
+b1010 "
+b1010 @
+b10011 &
+b10011 =
 b1100110101000110110011 *
-b1100110101000110110011 7
-b1100110101000110110011 A
-b110 1
-b110 @
+b1100110101000110110011 9
+b1100110101000110110011 C
+b110 3
 b110 B
+b110 D
 1.
-#22
-b0 2
 #23
 0.
 #25
-b111 1
-b111 @
+b111 3
 b111 B
+b111 D
 b11111110010100011000100011100011 *
-b11111110010100011000100011100011 7
-b11111110010100011000100011100011 A
-b110011 '
-b110011 ;
-b110 0
-b110 5
-b1 2
+b11111110010100011000100011100011 9
+b11111110010100011000100011100011 C
+b110011 &
+b110011 =
+b110 2
+b110 7
+b1 4
 1.
 #27
 0.
 #29
-b10001 &
-b10001 <
-b101 #
-b101 >
+b110 4
+b10001 %
+b10001 >
+b101 "
+b101 @
 b1111111 ,
-b1111111 9
-b1100011 '
-b1100011 ;
+b1111111 ;
+b1100011 &
+b1100011 =
 bx *
-bx 7
-bx A
-b1000 1
-b1000 @
+bx 9
+bx C
+b1000 3
 b1000 B
+b1000 D
 1.
-#30
-b110 2
 #31
 0.
 #33
-b1001 1
-b1001 @
+b1001 3
 b1001 B
-b110 "
-b110 3
-b110 ?
+b1001 D
+b110 !
+b110 5
+b110 A
 bx -
-bx 4
-bx 8
-bx #
-bx >
-bx $
-bx =
-bx +
+bx 6
 bx :
-bx '
-bx ;
+bx "
+bx @
+bx #
+bx ?
+bx +
+bx <
+bx &
+bx =
 1.

@@ -7,6 +7,7 @@
 //lw sw sub xor addi srl beq
 
 module main;
+    //IF
     wire [31:0] instrucao;
     wire [6:0] opcode;
     wire [4:0] rd;
@@ -19,6 +20,18 @@ module main;
     wire [31:0] PC;
     wire clk;
 
+    //ID
+    wire [31:0] readdata1R; //R para indicar que pertence ao banco de registradores
+    wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
+    wire [31:0] writedata;
+
+    //EX
+    wire [31:0] aluresult1;
+    wire [31:0] aluresult2;
+
+    //MEM
+    wire [31:0] reddataM; //M para indicar que pertence a memoria
+
     //sinais de controle
     wire regiwrite;
     wire [1:0] aluop;
@@ -26,9 +39,10 @@ module main;
     wire branch;
     wire memwrite;
     wire memread;
-    wire aluresult1;
-    wire aluresult2;
-    
+    wire pcsrc;
+    wire memtoreg;
+    wire alusrc;
+
 
     //parametros do estado
     parameter IF = 3'b000, //posição instrução
@@ -50,34 +64,17 @@ module main;
     end
 
     clock geraclk(.clk(clk));
-    pc resultpc(.PC(PC), .clk(clk));
+    pc somapc(.PC(PC), .clk(clk));
     lerinstrucao leitura(.instrucao(instrucao), .PC(PC), .clk(clk));
     decodificacao decodificar(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk));
-    controle controlador(.tipo(tipo), .regiwrite(regiwrite), .aluop(aluop), .memwrite(memwrite), .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .aluresult1(aluresult1), .clk(clk));
+    controle controlador(.tipo(tipo), .regiwrite(regiwrite), .aluop(aluop), .memwrite(memwrite), .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .clk(clk), .branch(branch), .memtoreg(memtoreg), .alusrc(alusrc));
 
     always @(posedge clk) begin
         case(estado)
         IF : begin
-            $display("Instrucao : %b", instrucao);
             estado <= ID;
         end
         ID: begin
-            case (tipo)
-            3'b000 : $display("formato i");
-            3'b010 : $display("formato s");
-            3'b011 : $display("formato r");
-            3'b110 : $display("formato sb");
-            endcase
-            #1
-            $display("sinal de controle");
-            $display("regiwrite : %b", regiwrite);
-            $display("aluop : %b", aluop);
-            $display("memwrite : %b", memwrite);
-            $display("memread : %b", memread);
-            $display("alucontrol : %b", alucontrol);
-            $display("funct3 : %b", funct3);
-            $display("aluresult1 : %b", aluresult1);
-            $display("PC: %d", PC);
             if(PC < 7) begin
                 estado <= IF;
             end

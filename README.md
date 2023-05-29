@@ -1,8 +1,4 @@
 # Caminho-de-dados-RISCV
 
-
-Executar:
-
-iverilog teste.v 
-vvp a.out
-sudo gtkwave wavefile.vcd 
+Instruções de compilação:
+    "chmod +x compilar.sh" e após "./compilar.sh"
