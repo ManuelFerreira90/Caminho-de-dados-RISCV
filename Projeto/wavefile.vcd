@@ -1,5 +1,5 @@
 $date
-	Mon May 29 20:38:22 2023
+	Tue May 30 09:25:58 2023
 $end
 $version
 	Icarus Verilog
@@ -28,38 +28,38 @@ $var wire 2 1 aluop [1:0] $end
 $var wire 4 2 alucontrol [3:0] $end
 $var wire 32 3 PC [31:0] $end
 $var reg 3 4 estado [2:0] $end
-$scope module controlador $end
-$var wire 3 5 tipo [2:0] $end
-$var wire 3 6 funct3 [2:0] $end
+$scope module clock $end
+$var reg 1 . clk $end
+$upscope $end
+$scope module decodificacao $end
 $var wire 1 . clk $end
-$var reg 4 7 alucontrol [3:0] $end
-$var reg 2 8 aluop [1:0] $end
+$var wire 32 5 instrucao [31:0] $end
+$var reg 3 6 funct3 [2:0] $end
+$var reg 7 7 funct7 [6:0] $end
+$var reg 12 8 immediate [11:0] $end
+$var reg 7 9 opcode [6:0] $end
+$var reg 5 : rd [4:0] $end
+$var reg 5 ; rs1 [4:0] $end
+$var reg 5 < rs2 [4:0] $end
+$var reg 3 = tipo [2:0] $end
+$upscope $end
+$scope module lerinstrucao $end
+$var wire 1 . clk $end
+$var wire 32 > PC [31:0] $end
+$var reg 32 ? instrucao [31:0] $end
+$upscope $end
+$scope module sinaisdecontrole $end
+$var wire 1 . clk $end
+$var wire 3 @ funct3 [2:0] $end
+$var wire 3 A tipo [2:0] $end
+$var reg 4 B alucontrol [3:0] $end
+$var reg 2 C aluop [1:0] $end
 $var reg 1 0 alusrc $end
 $var reg 1 / branch $end
 $var reg 1 ) memread $end
 $var reg 1 ( memtoreg $end
 $var reg 1 ' memwrite $end
 $var reg 1 $ regiwrite $end
-$upscope $end
-$scope module decodificar $end
-$var wire 32 9 instrucao [31:0] $end
-$var wire 1 . clk $end
-$var reg 3 : funct3 [2:0] $end
-$var reg 7 ; funct7 [6:0] $end
-$var reg 12 < immediate [11:0] $end
-$var reg 7 = opcode [6:0] $end
-$var reg 5 > rd [4:0] $end
-$var reg 5 ? rs1 [4:0] $end
-$var reg 5 @ rs2 [4:0] $end
-$var reg 3 A tipo [2:0] $end
-$upscope $end
-$scope module geraclk $end
-$var reg 1 . clk $end
-$upscope $end
-$scope module leitura $end
-$var wire 1 . clk $end
-$var wire 32 B PC [31:0] $end
-$var reg 32 C instrucao [31:0] $end
 $upscope $end
 $scope module somapc $end
 $var wire 1 . clk $end
@@ -71,11 +71,11 @@ $enddefinitions $end
 $dumpvars
 b0 D
 bx C
-b0 B
+bx B
 bx A
 bx @
 bx ?
-bx >
+b0 >
 bx =
 bx <
 bx ;
@@ -108,11 +108,11 @@ bx !
 $end
 #1
 b1 3
-b1 B
+b1 >
 b1 D
 b110000011010000010000011 *
-b110000011010000010000011 9
-b110000011010000010000011 C
+b110000011010000010000011 5
+b110000011010000010000011 ?
 b1 4
 1.
 #3
@@ -120,37 +120,37 @@ b1 4
 #5
 b0 4
 b11 &
-b11 =
+b11 9
 b100011010011000100011 *
-b100011010011000100011 9
-b100011010011000100011 C
+b100011010011000100011 5
+b100011010011000100011 ?
 b10 3
-b10 B
+b10 >
 b10 D
 1.
 #7
 0.
 #9
 b11 3
-b11 B
+b11 >
 b11 D
 b1000000011000110000001010110011 *
-b1000000011000110000001010110011 9
-b1000000011000110000001010110011 C
+b1000000011000110000001010110011 5
+b1000000011000110000001010110011 ?
 b0 !
-b0 5
+b0 =
 b0 A
 b1 +
-b1 <
+b1 8
 b10 -
 b10 6
-b10 :
+b10 @
 b11 #
-b11 ?
+b11 ;
 b1100 %
-b1100 >
+b1100 :
 b100011 &
-b100011 =
+b100011 9
 b1 4
 1.
 #11
@@ -161,56 +161,56 @@ b0 4
 1(
 0/
 b10 2
-b10 7
+b10 B
 1)
 0'
 b0 1
-b0 8
+b0 C
 1$
 b10 !
-b10 5
+b10 =
 b10 A
 b0 -
 b0 6
-b0 :
+b0 @
 b110 "
-b110 @
+b110 <
 b110 #
-b110 ?
+b110 ;
 b10000000101 +
-b10000000101 <
+b10000000101 8
 b110011 &
-b110011 =
+b110011 9
 b10100101100001010110011 *
-b10100101100001010110011 9
-b10100101100001010110011 C
+b10100101100001010110011 5
+b10100101100001010110011 ?
 b100 3
-b100 B
+b100 >
 b100 D
 1.
 #15
 0.
 #17
 b101 3
-b101 B
+b101 >
 b101 D
 b101000011000000110010011 *
-b101000011000000110010011 9
-b101000011000000110010011 C
+b101000011000000110010011 5
+b101000011000000110010011 ?
 b11 !
-b11 5
+b11 =
 b11 A
 b100 -
 b100 6
-b100 :
+b100 @
 b101 %
-b101 >
+b101 :
 b101 #
-b101 ?
+b101 ;
 b101 "
-b101 @
+b101 <
 b0 ,
-b0 ;
+b0 7
 0)
 1'
 0$
@@ -224,39 +224,39 @@ b0 4
 0(
 0'
 b10 1
-b10 8
+b10 C
 1$
 b0 -
 b0 6
-b0 :
+b0 @
 b11 %
-b11 >
+b11 :
 b11 #
-b11 ?
+b11 ;
 b1010 "
-b1010 @
+b1010 <
 b10011 &
-b10011 =
+b10011 9
 b1100110101000110110011 *
-b1100110101000110110011 9
-b1100110101000110110011 C
+b1100110101000110110011 5
+b1100110101000110110011 ?
 b110 3
-b110 B
+b110 >
 b110 D
 1.
 #23
 0.
 #25
 b111 3
-b111 B
+b111 >
 b111 D
 b11111110010100011000100011100011 *
-b11111110010100011000100011100011 9
-b11111110010100011000100011100011 C
+b11111110010100011000100011100011 5
+b11111110010100011000100011100011 ?
 b110011 &
-b110011 =
+b110011 9
 b110 2
-b110 7
+b110 B
 b1 4
 1.
 #27
@@ -264,38 +264,38 @@ b1 4
 #29
 b110 4
 b10001 %
-b10001 >
+b10001 :
 b101 "
-b101 @
+b101 <
 b1111111 ,
-b1111111 ;
+b1111111 7
 b1100011 &
-b1100011 =
+b1100011 9
 bx *
-bx 9
-bx C
+bx 5
+bx ?
 b1000 3
-b1000 B
+b1000 >
 b1000 D
 1.
 #31
 0.
 #33
 b1001 3
-b1001 B
+b1001 >
 b1001 D
 b110 !
-b110 5
+b110 =
 b110 A
 bx -
 bx 6
-bx :
-bx "
 bx @
-bx #
-bx ?
-bx +
+bx "
 bx <
+bx #
+bx ;
+bx +
+bx 8
 bx &
-bx =
+bx 9
 1.
