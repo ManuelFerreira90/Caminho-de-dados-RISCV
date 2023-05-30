@@ -33,7 +33,6 @@ module main;
 
     //MEM
     wire [31:0] reddataM; //M para indicar que pertence a memoria
-    wire [31:0] writedataM; //M para indicar que pertence a memoria
 
     //sinais de controle
     wire regiwrite;
@@ -65,11 +64,12 @@ module main;
     end
 
     clock clock(.clk(clk));
-    somapc somapc(.PC(PC), .clk(clk));
+    somapc somapc(.PC(PC), .clk(clk), .pcsrc(pcsrc), .immediate(immediate));
     lerinstrucao lerinstrucao(.instrucao(instrucao), .PC(PC), .clk(clk));
     decodificacao decodificacao(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk));
     sinaisdecontrole sinaisdecontrole(.tipo(tipo), .regiwrite(regiwrite), .memwrite(memwrite), .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .clk(clk), .branch(branch), .memtoreg(memtoreg), .alusrc(alusrc));
-
+    registradores registradores(.clk(clk), .rs1(rs1), .rs2(rs2), .rd(rd), .writedataR(writedataR), .readdata1R(readdata1R), .readdata2R(readdata2R), .regiwrite(regiwrite));
+    alu alu(.clk(clk), .readdata1R(readdata1R), .readdata2R(readdata2R), .alusrc(alusrc), .alucontrol(alucontrol), .immediate(immediate), .aluresult1(aluresult1), .aluresult2(aluresult2), .pcsrc(pcsrc), .branch(branch));
 
 
     always @(posedge clk) begin

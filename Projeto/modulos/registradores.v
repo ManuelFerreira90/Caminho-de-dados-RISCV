@@ -5,13 +5,13 @@ module registradores (clk, rs1, rs2, rd, writedataR, readdata1R, readdata2R, reg
     input [4:0] rd;
     input regiwrite;
     input [31:0] writedataR;
-    output reg [31:0] readdata1R
+    output reg [31:0] readdata1R;
     output reg [31:0] readdata2R;
     reg [31:0] memoriaderegistradores [0:31];
 
     always @(posedge clk) begin
-        readdata1R <= rs1;
-        readdata2R <= rs2;
+        readdata1R <= memoriaderegistradores[rs1];
+        readdata2R <= memoriaderegistradores[rs2];
         if(regiwrite == 1'b1) begin
             memoriaderegistradores[rd] <= writedataR;
         end
