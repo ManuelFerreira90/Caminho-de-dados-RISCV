@@ -5,6 +5,7 @@
 `include "modulos/clock.v"
 `include "modulos/registradores.v"
 `include "modulos/alu.v"
+`include "modulos/memoria.v"
 
 //lw sw sub xor addi srl beq
 
@@ -25,7 +26,9 @@ module main;
     //ID
     wire [31:0] readdata1R; //R para indicar que pertence ao banco de registradores
     wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
-    wire [31:0] writedataR; //R para indicar que pertence ao banco de registradores
+    wire [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
+    wire [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
+    wire [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX
     wire [31:0] aluresult1;
@@ -68,8 +71,9 @@ module main;
     lerinstrucao lerinstrucao(.instrucao(instrucao), .PC(PC), .clk(clk));
     decodificacao decodificacao(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk));
     sinaisdecontrole sinaisdecontrole(.tipo(tipo), .regiwrite(regiwrite), .memwrite(memwrite), .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .clk(clk), .branch(branch), .memtoreg(memtoreg), .alusrc(alusrc));
-    registradores registradores(.clk(clk), .rs1(rs1), .rs2(rs2), .rd(rd), .writedataR(writedataR), .readdata1R(readdata1R), .readdata2R(readdata2R), .regiwrite(regiwrite));
+    registradores registradores(.clk(clk), .rs1(rs1), .rs2(rs2), .rd(rd), .readdata1R(readdata1R), .readdata2R(readdata2R), .regiwrite(regiwrite), .memtoreg(memtoreg), .aluresult2(aluresult2), .reddataM(reddataM),.reg0(reg0), .reg1(reg1), .reg2(reg2), .reg3(reg3), .reg4(reg4), .reg5(reg5), .reg6(reg6), .reg7(reg7), .reg8(reg8), .reg9(reg9), .reg10(reg11), .reg11(reg11),.reg12(reg12), .reg13(reg13), .reg14(reg14), .reg15(reg15), .reg16(reg16), .reg17(reg17), .reg18(reg18), .reg19(reg19), .reg20(reg20), .reg21(reg21), .reg22(reg22), .reg23(reg23), .reg24(reg24), .reg25(reg25), .reg26(reg26), .reg27(reg27), .reg28(reg28), .reg29(reg29), .reg30(reg30), .reg31(reg30));
     alu alu(.clk(clk), .readdata1R(readdata1R), .readdata2R(readdata2R), .alusrc(alusrc), .alucontrol(alucontrol), .immediate(immediate), .aluresult1(aluresult1), .aluresult2(aluresult2), .pcsrc(pcsrc), .branch(branch));
+    memoria memoria(.clk(clk), .aluresult2(aluresult2), .rs2(rs2), .reddataM(reddataM), .memwrite(memwrite), .memread(memread), .immediate(immediate));
 
 
     always @(posedge clk) begin
