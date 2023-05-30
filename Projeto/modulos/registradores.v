@@ -9,6 +9,10 @@ module registradores (clk, rs1, rs2, rd, writedataR, readdata1R, readdata2R, reg
     output reg [31:0] readdata2R;
     reg [31:0] memoriaderegistradores [0:31];
 
+    initial begin
+        $readmemb("entrada/registradores.bin", memoriaderegistradores); // Lendo registradores
+    end
+
     always @(posedge clk) begin
         readdata1R <= memoriaderegistradores[rs1];
         readdata2R <= memoriaderegistradores[rs2];
