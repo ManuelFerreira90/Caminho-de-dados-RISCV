@@ -9,11 +9,12 @@ module somapc (PC, clk, pcsrc, immediate);
   end
 
   always @(posedge clk) begin
-      case (pcsrc)
-          1'b0: PC <= PC + 1;
-          1'b1: PC <= PC + immediate;
-      endcase
-      PC <= PC + 1;
+    #10
+    case (pcsrc)
+        1'b0: PC <= PC + 1;
+        1'b1: PC <= PC + immediate;
+    endcase
+    PC <= PC + 1;
   end
 
 endmodule
