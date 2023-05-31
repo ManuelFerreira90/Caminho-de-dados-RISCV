@@ -1,5 +1,5 @@
 module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3, clk, branch, memtoreg, alusrc);
-    input wire [2:0] tipo;
+    input wire [2:0] tipo; //Pega os 3 bits mais significativos do opcode para comparação
     input wire [2:0] funct3;
     //input wire aluresult1;
     input wire clk;
@@ -18,6 +18,15 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                 regiwrite <= 1'b1;
                 memwrite <= 1'b0;
                 memread <= 1'b1;
+                alucontrol <= 4'b0010;
+                branch <= 1'b0;
+                memtoreg <= 1'b1;
+                alusrc <= 1'b1;
+            end
+            3'b001: begin //addi
+                regiwrite <= 1'b1;
+                memwrite <= 1'b0;
+                memread <= 1'b0;
                 alucontrol <= 4'b0010;
                 branch <= 1'b0;
                 memtoreg <= 1'b1;
