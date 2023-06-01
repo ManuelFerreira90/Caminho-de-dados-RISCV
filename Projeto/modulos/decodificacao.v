@@ -13,8 +13,8 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
 
     always @(posedge clk) begin
       if(estado == 3'b001)begin
-        opcode <= instrucao [6:0];
-        case (opcode[6:4]) 
+        //opcode <= instrucao [6:0];
+        case (instrucao[6:4]) 
           3'b000: begin //formato i
             rd <= instrucao[11:7];
             rs1 <= instrucao[19:15];

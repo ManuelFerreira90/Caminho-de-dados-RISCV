@@ -1,6 +1,7 @@
-module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3, clk, branch, memtoreg, alusrc);
+module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3, clk, branch, memtoreg, alusrc, funct7);
     input wire [2:0] tipo; //Pega os 3 bits mais significativos do opcode para comparação
     input wire [2:0] funct3;
+    input wire [6:0] funct7;
     //input wire aluresult1;
     input wire clk;
     output reg regiwrite;
@@ -43,14 +44,27 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
             end
             3'b011: begin
                 case (funct3)
-                    3'b000 : begin //sub
-                        regiwrite <= 1'b1;
-                        memwrite <= 1'b0;
-                        memread <= 1'b0;
-                        alucontrol <= 4'b0110;
-                        branch <= 1'b0;
-                        memtoreg <= 1'b0;
-                        alusrc <= 1'b0;
+                    3'b000 : begin //sub e soma
+                        case(funct7[6:5])
+                            2'b00: begin
+                                regiwrite <= 1'b1;
+                                memwrite <= 1'b0;
+                                memread <= 1'b0;
+                                alucontrol <= 4'b0010;
+                                branch <= 1'b0;
+                                memtoreg <= 1'b0;
+                                alusrc <= 1'b0;
+                            end
+                            2'b01: begin
+                              regiwrite <= 1'b1;
+                                memwrite <= 1'b0;
+                                memread <= 1'b0;
+                                alucontrol <= 4'b0110;
+                                branch <= 1'b0;
+                                memtoreg <= 1'b0;
+                                alusrc <= 1'b0;
+                            end
+                        endcase
                     end
                     3'b100 : begin //xor
                         regiwrite <= 1'b1;
@@ -70,6 +84,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                         memtoreg <= 1'b0;
                         alusrc <= 1'b0;
                     end
+                    
                 endcase
             end
             3'b110: begin //beq
