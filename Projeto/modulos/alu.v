@@ -1,5 +1,6 @@
-module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresult1, aluresult2, pcsrc, branch);
+module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresult1, aluresult2, pcsrc, branch, estado);
     input wire clk;
+    input wire [2:0] estado;
     input [31:0] readdata1R;
     input [31:0] readdata2R;
     input alusrc;
