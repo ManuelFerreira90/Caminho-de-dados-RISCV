@@ -52,18 +52,19 @@ module main;
 
 
     //parametros do estado
-    parameter IF = 3'b000, //posição instrução
-              ID = 3'b001, //leitura
-              EX = 3'b010, //execução
-              MEM = 3'b011, //leitura memoria
-              WB = 3'b100, //escrita
-              AUX = 3'b101, //auxiliar para atraso
-              SUMPC = 3'b110, //soma pc
-              FIM = 3'b111; //finish
+    parameter IF = 4'b0000, //posição instrução
+              ID = 4'b0001, //leitura
+              EX = 4'b0010, //execução
+              MEM = 4'b0011, //leitura memoria
+              WB = 4'b0100, //escrita
+              AUX1 = 4'b0101, //auxiliar para atraso
+              AUX2 = 4'b0110, //auxiliar para atraso
+              SUMPC = 4'b0111, //soma pc
+              FIM = 4'b1000; //finish
 
 
     // //maquina de estados
-    reg [2:0] estado;
+    reg [3:0] estado;
 
     initial begin
         $dumpfile("wavefile.vcd");
@@ -84,15 +85,15 @@ module main;
     always @(posedge clk) begin
         case(estado)
         IF: begin
-            if(PC < 11)begin
-                estado <= ID;
+             estado <= ID;
+        end
+        ID: begin
+            if(instrucao != 0)begin
+                estado <= EX;
             end
             else begin
                 estado <= FIM;
             end
-        end
-        ID: begin
-            estado <= EX; 
         end
         EX: begin
             estado <= MEM;
@@ -101,9 +102,12 @@ module main;
             estado <= WB;
         end
         WB: begin
-            estado <= AUX;
+            estado <= AUX1;
         end
-        AUX: begin
+        AUX1: begin
+            estado <= AUX2;
+        end
+        AUX2: begin
             estado <= SUMPC;
         end
         SUMPC: begin

@@ -1,6 +1,6 @@
 module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, estado);
     input wire clk;
-    input [2:0] estado;
+    input [3:0] estado;
     input [31:0] aluresult2;
     input [4:0] rs2;
     input memwrite;
@@ -51,7 +51,7 @@ module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, me
 
     always @(posedge clk) begin
         //immediateaux <= immediate / 4;
-        if(estado == 3'b011) begin
+        if(estado == 4'b0011) begin
             if(memwrite == 1'b1) begin
                 memoria[aluresult2] <= rs2;
             end

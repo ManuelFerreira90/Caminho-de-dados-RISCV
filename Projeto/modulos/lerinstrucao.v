@@ -1,7 +1,7 @@
 module lerinstrucao (instrucao, PC, clk, estado);
     input wire [31:0] PC;
     input wire clk;
-    input wire [2:0] estado;
+    input wire [3:0] estado;
     output reg [31:0] instrucao;
     reg [31:0] instrucoes [0:10]; // Memória de instruções
 
@@ -11,7 +11,7 @@ module lerinstrucao (instrucao, PC, clk, estado);
     end
 
     always @(posedge clk) begin
-        if(estado == 3'b000)begin
+        if(estado == 4'b0000)begin
             instrucao <= instrucoes[PC];
         end
     end

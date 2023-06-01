@@ -1,7 +1,7 @@
 module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate, tipo, clk, estado);
     input wire [31:0] instrucao;
     input wire clk;
-    input wire [2:0] estado;
+    input wire [3:0] estado;
     output reg [6:0] opcode;
     output reg [4:0] rd;
     output reg [4:0] rs1;
@@ -12,7 +12,7 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
     output reg [2:0] tipo;
 
     always @(posedge clk) begin
-      if(estado == 3'b001)begin
+      if(estado == 4'b0001)begin
         //opcode <= instrucao [6:0];
         case (instrucao[6:4]) 
           3'b000: begin //formato i

@@ -1,6 +1,6 @@
 module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresult1, aluresult2, pcsrc, branch, estado);
     input wire clk;
-    input wire [2:0] estado;
+    input wire [3:0] estado;
     input [31:0] readdata1R;
     input [31:0] readdata2R;
     input alusrc;
@@ -12,7 +12,7 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
     output reg pcsrc;
 
     always @(posedge clk) begin
-        if ((estado == 3'b010) || (estado == 3'b101)) begin // Estado de execução
+        if ((estado == 4'b0010) || (estado == 4'b0101) || (estado == 4'b0110 )) begin // Estado de execução
             case (alusrc)
                 1'b0: begin // operações para funções que não usam imediato
                     case (alucontrol)

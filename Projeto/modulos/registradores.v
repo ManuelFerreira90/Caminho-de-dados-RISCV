@@ -1,6 +1,6 @@
 module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memtoreg, aluresult2, reddataM, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31, estado);
     input wire clk;
-    input [2:0] estado;
+    input [3:0] estado;
     input [4:0] rs1;
     input [4:0] rs2;
     input [4:0] rd;
@@ -52,7 +52,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
     end
 
     always @(posedge clk) begin
-        if((estado == 3'b010) || (estado == 3'b101)) begin // Estado de execução
+        if ((estado == 4'b0010) || (estado == 4'b0101) || (estado == 4'b0110 )) begin // Estado de execução
             readdata1R <= bancoregistradores[rs1];
             readdata2R <= bancoregistradores[rs2];
             case (regiwrite)

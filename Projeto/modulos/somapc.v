@@ -1,6 +1,6 @@
 module somapc (PC, clk, pcsrc, immediate, estado);
   input wire clk;
-  input wire [2:0] estado;
+  input wire [3:0] estado;
   input pcsrc;
   input [11:0] immediate;
   output reg [31:0] PC;
@@ -10,7 +10,7 @@ module somapc (PC, clk, pcsrc, immediate, estado);
   end
 
   always @(posedge clk) begin
-    if(estado == 3'b110) begin
+    if(estado == 4'b0111) begin
       case (pcsrc)
           1'b0: begin
             PC <= PC + 1;
