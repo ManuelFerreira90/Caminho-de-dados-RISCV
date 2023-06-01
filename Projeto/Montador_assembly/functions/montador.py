@@ -118,8 +118,6 @@ def lw(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional
@@ -151,8 +149,6 @@ def sw(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -186,8 +182,6 @@ def sub(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional
@@ -213,8 +207,6 @@ def xor(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional
@@ -262,8 +254,6 @@ def addi(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional
@@ -295,8 +285,6 @@ def srl(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional
@@ -345,8 +333,6 @@ def beq(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -392,8 +378,6 @@ def jalr(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -426,8 +410,6 @@ def mv(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -449,8 +431,6 @@ def noti(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
     
 #100% funcional
@@ -487,8 +467,6 @@ def li(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return 
 
 #100% funcional 
@@ -505,8 +483,6 @@ def nop(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -586,8 +562,6 @@ def j(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -604,8 +578,6 @@ def ret(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -635,8 +607,6 @@ def neg(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
     return
 
 #100% funcional
@@ -683,8 +653,6 @@ def bne(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
 
 #100% funcional
 def blt(linha, num, nome_arq):
@@ -730,8 +698,6 @@ def blt(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
 
 #100% funcional
 def bge(linha, num, nome_arq):
@@ -777,8 +743,6 @@ def bge(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
 
 #100% funcional
 def bltu(linha, num, nome_arq):
@@ -824,8 +788,6 @@ def bltu(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
 
 #100% funcional
 def bgeu(linha, num, nome_arq):
@@ -871,8 +833,6 @@ def bgeu(linha, num, nome_arq):
     resultado_hex = converter_oc_e_hex(resultado, 2)
     resultado_octal = converter_oc_e_hex(resultado, 3)
     criar.criarArquivo_bin(resultado, num, nome_arq)
-    criar.criarArquivo_hex(resultado_hex, num, nome_arq)
-    criar.criarArquivo_octal(resultado_octal, num, nome_arq)
 
 def indentificar_funcao(x, num, arq):
     if x[0] == 'lw':
