@@ -52,7 +52,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
     end
 
     always @(posedge clk) begin
-        if(estado == 3'b010) begin // Estado de execução
+        if((estado == 3'b010) || (estado == 3'b101)) begin // Estado de execução
             readdata1R <= bancoregistradores[rs1];
             readdata2R <= bancoregistradores[rs2];
             case (regiwrite)

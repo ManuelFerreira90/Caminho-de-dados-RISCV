@@ -3,7 +3,7 @@ module lerinstrucao (instrucao, PC, clk, estado);
     input wire clk;
     input wire [2:0] estado;
     output reg [31:0] instrucao;
-    reg [31:0] instrucoes [0:6]; // Memória de instruções
+    reg [31:0] instrucoes [0:10]; // Memória de instruções
 
     initial begin
         $readmemb("entrada/assembler.bin", instrucoes); // Lendo instruções em formato binário

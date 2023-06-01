@@ -31,7 +31,7 @@ module main;
     wire [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX
-    wire [31:0] aluresult1;
+    wire aluresult1;
     wire [31:0] aluresult2;
 
     //MEM
@@ -57,7 +57,9 @@ module main;
               EX = 3'b010, //execução
               MEM = 3'b011, //leitura memoria
               WB = 3'b100, //escrita
-              FIM = 3'b110; //finish
+              AUX = 3'b101, //auxiliar para atraso
+              SUMPC = 3'b110, //soma pc
+              FIM = 3'b111; //finish
 
 
     // //maquina de estados
@@ -81,19 +83,32 @@ module main;
 
     always @(posedge clk) begin
         case(estado)
-        IF: estado <= ID;
-        ID: estado <= EX;
-        EX: estado <= MEM;
-        MEM: estado <= WB;
-        WB: begin
-            #20
-            if(PC < 7)begin
-                estado <= IF;
+        IF: begin
+            if(PC < 11)begin
+                estado <= ID;
             end
             else begin
                 estado <= FIM;
             end
-            end
+        end
+        ID: begin
+            estado <= EX; 
+        end
+        EX: begin
+            estado <= MEM;
+        end
+        MEM: begin
+            estado <= WB;
+        end
+        WB: begin
+            estado <= AUX;
+        end
+        AUX: begin
+            estado <= SUMPC;
+        end
+        SUMPC: begin
+            estado <= IF;
+        end
         FIM : begin
             $finish;
         end
