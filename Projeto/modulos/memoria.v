@@ -1,6 +1,6 @@
 module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, mem32, mem33, mem34, mem35, mem36, mem37, mem38, mem39, mem40, mem41, mem42, mem43, mem44, mem45, mem46, mem47, mem48, mem49, mem50, mem51, mem52, mem53, mem54, mem55, mem56, mem57, mem58, mem59, mem60, mem61, mem62, mem63, estado);
     input wire clk;
-    input [2:0] estado;
+    input [2:0] estado;   
     input [31:0] aluresult2;
     input [4:0] rs2;
     input memwrite;
