@@ -1,20 +1,16 @@
-`include "atraso.v";
-
 module somapc (PC, clk, pcsrc, immediate, estado);
   input wire clk;
   input wire [2:0] estado;
   input pcsrc;
   input [11:0] immediate;
   output reg [31:0] PC;
-  input reset ; //Para efetuar o atraso
-  wire instr_out;
 
   initial begin
       PC <= 0;
   end
 
   always @(posedge clk) begin
-    if(estado == 3'b100) begin
+    if(estado == 3'b000) begin
       case (pcsrc)
           1'b0: PC <= PC + 1;
           1'b1: PC <= PC + immediate;
@@ -22,8 +18,6 @@ module somapc (PC, clk, pcsrc, immediate, estado);
       PC <= PC + 1;
     end
   end
-
-  atraso atraso(.clk(clk), .reset(reset), .instr_out(instr_out));
 
 endmodule
 

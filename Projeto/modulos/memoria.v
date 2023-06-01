@@ -1,4 +1,4 @@
-module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, estado);
+module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, mem32, mem33, mem34, mem35, mem36, mem37, mem38, mem39, mem40, mem41, mem42, mem43, mem44, mem45, mem46, mem47, mem48, mem49, mem50, mem51, mem52, mem53, mem54, mem55, mem56, mem57, mem58, mem59, mem60, mem61, mem62, mem63, estado);
     input wire clk;
     input [2:0] estado;
     input [31:0] aluresult2;
@@ -9,9 +9,9 @@ module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, me
     output reg [31:0] reddataM;
     output reg [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
     output reg [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
-    output reg [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
+    output reg [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, mem32, mem33, mem34, mem35, mem36, mem37, mem38, mem39, mem40, mem41, mem42, mem43, mem44, mem45, mem46, mem47, mem48, mem49, mem50, mem51, mem52, mem53, mem54, mem55, mem56, mem57, mem58, mem59, mem60, mem61, mem62, mem63;
     //reg [31:0] immediateaux;
-    reg [31:0] memoria [0:31];
+    reg [63:0] memoria [0:63];
 
     initial begin
         $readmemb("entrada/memoria.bin", memoria); // iniciando a memoria
@@ -47,6 +47,38 @@ module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, me
         mem29 <= memoria[29];
         mem30 <= memoria[30];
         mem31 <= memoria[31];
+        mem32 <= memoria[32];  
+        mem33 <= memoria[33];  
+        mem34 <= memoria[34];  
+        mem35 <= memoria[35];  
+        mem36 <= memoria[36];  
+        mem37 <= memoria[37];  
+        mem38 <= memoria[38];  
+        mem39 <= memoria[39];  
+        mem40 <= memoria[40];  
+        mem41 <= memoria[41];  
+        mem42 <= memoria[42];  
+        mem43 <= memoria[43];  
+        mem44 <= memoria[44];  
+        mem45 <= memoria[45];  
+        mem46 <= memoria[46];  
+        mem47 <= memoria[47];  
+        mem48 <= memoria[48];  
+        mem49 <= memoria[49];  
+        mem50 <= memoria[50];  
+        mem51 <= memoria[51];  
+        mem52 <= memoria[52];  
+        mem53 <= memoria[53];  
+        mem54 <= memoria[54];  
+        mem55 <= memoria[55];  
+        mem56 <= memoria[56];  
+        mem57 <= memoria[57];  
+        mem58 <= memoria[58];  
+        mem59 <= memoria[59];  
+        mem60 <= memoria[60];  
+        mem61 <= memoria[61];  
+        mem62 <= memoria[62];   
+        mem63 <= memoria[63];
     end
 
     always @(posedge clk) begin
@@ -89,7 +121,39 @@ module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, me
             mem28 <= memoria[28];
             mem29 <= memoria[29];
             mem30 <= memoria[30];
-            mem31 <= memoria[31];
+            mem31 <= memoria[31];     
+            mem32 <= memoria[32];  
+            mem33 <= memoria[33];  
+            mem34 <= memoria[34];  
+            mem35 <= memoria[35];  
+            mem36 <= memoria[36];  
+            mem37 <= memoria[37];  
+            mem38 <= memoria[38];  
+            mem39 <= memoria[39];  
+            mem40 <= memoria[40];  
+            mem41 <= memoria[41];  
+            mem42 <= memoria[42];  
+            mem43 <= memoria[43];  
+            mem44 <= memoria[44];  
+            mem45 <= memoria[45];  
+            mem46 <= memoria[46];  
+            mem47 <= memoria[47];  
+            mem48 <= memoria[48];  
+            mem49 <= memoria[49];  
+            mem50 <= memoria[50];  
+            mem51 <= memoria[51];  
+            mem52 <= memoria[52];  
+            mem53 <= memoria[53];  
+            mem54 <= memoria[54];  
+            mem55 <= memoria[55];  
+            mem56 <= memoria[56];  
+            mem57 <= memoria[57];  
+            mem58 <= memoria[58];  
+            mem59 <= memoria[59];  
+            mem60 <= memoria[60];  
+            mem61 <= memoria[61];  
+            mem62 <= memoria[62];   
+            mem63 <= memoria[63];  
         end
     end
     
