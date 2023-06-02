@@ -59,8 +59,9 @@ module main;
               WB = 4'b0100, //escrita
               AUX1 = 4'b0101, //auxiliar para atraso
               AUX2 = 4'b0110, //auxiliar para atraso
-              SUMPC = 4'b0111, //soma pc
-              FIM = 4'b1000; //finish
+              AUX3 = 4'b0111, //auxiliar para atraso
+              SUMPC = 4'b1000, //soma pc
+              FIM = 4'b1001; //finish
 
 
     // //maquina de estados
@@ -108,6 +109,9 @@ module main;
             estado <= AUX2;
         end
         AUX2: begin
+            estado <= AUX3;
+        end
+        AUX3: begin
             estado <= SUMPC;
         end
         SUMPC: begin

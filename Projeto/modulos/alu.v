@@ -41,6 +41,11 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
                             aluresult1 <= 1'b0;
                             
                         end
+                        4'b0011: begin // addi
+                            aluresult2 <= readdata1R + immediate;
+                            aluresult1 <= 1'b0;
+                            
+                        end
                         4'b0110: begin //subtração para beq
                             aluresult2 <= readdata1R - readdata2R;
                             if(aluresult2 == 0) begin

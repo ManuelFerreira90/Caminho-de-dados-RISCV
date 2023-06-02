@@ -28,9 +28,9 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                 regiwrite <= 1'b1;
                 memwrite <= 1'b0;
                 memread <= 1'b0;
-                alucontrol <= 4'b0010;
+                alucontrol <= 4'b0011;
                 branch <= 1'b0;
-                memtoreg <= 1'b1;
+                memtoreg <= 1'b0;
                 alusrc <= 1'b1;
             end
             3'b010: begin //sw

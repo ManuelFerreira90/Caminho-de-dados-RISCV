@@ -10,7 +10,7 @@ module somapc (PC, clk, pcsrc, immediate, estado);
   end
 
   always @(posedge clk) begin
-    if(estado == 4'b0111) begin
+    if(estado == 4'b1000) begin
       case (pcsrc)
           1'b0: begin
             PC <= PC + 1;

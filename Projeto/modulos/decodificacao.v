@@ -22,6 +22,13 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
             immediate <= instrucao[31:20];
             tipo <= 3'b000;
           end
+          3'b001: begin //formato i
+            rd <= instrucao[11:7];
+            rs1 <= instrucao[19:15];
+            funct3 <= instrucao[14:12];
+            immediate <= instrucao[31:20];
+            tipo <= 3'b001;
+          end
           3'b010: begin //formato s
             immediate <= {instrucao[31:25], instrucao[11:7]};
             rs1 <= instrucao[19:15];
