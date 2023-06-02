@@ -11,9 +11,9 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
     output reg [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
     output reg [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
     output reg [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
-    //reg [31:0] immediateaux;
     reg [31:0] memoria [0:31];
 
+    // leiura da memoria do arquivo memoria.bin
     initial begin
         $readmemb("entrada/memoria.bin", memoria); // iniciando a memoria
         mem0 <= memoria[0];
@@ -50,8 +50,8 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
         mem31 <= memoria[31];
     end
 
+    // atualizando a memoria a cada ciclo de clock
     always @(posedge clk) begin
-        //immediateaux <= immediate / 4;
         if((estado == 4'b0011) || (estado == 4'b0110 ) || (estado == 4'b0111)) begin
             if(memwrite == 1'b1) begin
                 memoria[aluresult2] <= readdata2R;

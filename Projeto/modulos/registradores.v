@@ -15,6 +15,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
     output reg [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
     reg [31:0] bancoregistradores [0:31];
 
+    // lendo os valores dos registradores no arquivo registradores.bin
     initial begin
         $readmemb("entrada/registradores.bin", bancoregistradores); // Lendo registradores
         reg0 <= bancoregistradores[0];
@@ -51,13 +52,18 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
         reg31 <= bancoregistradores[31];
     end
 
+    // lendo os valores dos registradores usados na alu
     assign readdata1R = bancoregistradores[rs1];
     assign readdata2R = bancoregistradores[rs2];
 
+    // escrevendo no registrador
     always @(posedge clk) begin
+        // estado onde o registrador é escrito
         if ((estado == 4'b0110 ) || (estado == 4'b0111)) begin // Estado de execução
+            // regiwirte mostra se o registrador é escrito ou não
             case (regiwrite)
                 1'b1: begin
+                    // memtoreg mostra se o dado vem da memória ou da alu
                     case (memtoreg)
                         1'b1: begin
                             bancoregistradores[rd] <= reddataM;

@@ -1,4 +1,4 @@
-module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresult1, aluresult2, pcsrc, branch, estado);
+module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresult1, aluresult2, pcsrc, branch, estado, negativo);
     input wire clk;
     input wire [3:0] estado;
     input [31:0] readdata1R;
@@ -7,6 +7,7 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
     input [11:0] immediate;
     input branch;
     input [3:0] alucontrol;
+    input negativo;
     output reg aluresult1;
     output reg [31:0] aluresult2;
     output pcsrc;
@@ -14,9 +15,12 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
     assign pcsrc = aluresult1 & branch;
 
     always @(posedge clk) begin
+        //estados em a alu é usada
         if ((estado == 4'b0101) || (estado == 4'b0110 )) begin // Estado de execução
+            //alusrc define se a alu vai usar imediato ou não
             case (alusrc)
                 1'b0: begin // operações para funções que não usam imediato
+                    //alucontrol define a operação que a alu vai fazer
                     case (alucontrol)
                         4'b0000: begin // and
                             aluresult2 <= readdata1R & readdata2R;
@@ -47,12 +51,20 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
                 1'b1: begin // operações para funções que usam imediato
                     case (alucontrol)
                         4'b0010: begin // soma lw e sw
-                            aluresult2 <= readdata1R + (immediate/4);
+                            if(negativo == 1'b1) begin
+                                aluresult2 <= readdata1R - (immediate/4);
+                            end else begin
+                                aluresult2 <= readdata1R + (immediate/4);
+                            end
                             aluresult1 <= 1'b0;
                             
                         end
                         4'b0011: begin // addi
-                            aluresult2 <= readdata1R + immediate;
+                            if(negativo == 1'b1) begin
+                                aluresult2 <= readdata1R - immediate;
+                            end else begin
+                                aluresult2 <= readdata1R + immediate;
+                            end
                             aluresult1 <= 1'b0;
                             
                         end
@@ -60,6 +72,14 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
                             aluresult2 <= readdata1R - readdata2R;
                             if(aluresult2 == 0) begin
                                 aluresult1 <= 1'b1;
+                            end
+                        end
+                        4'b1111: begin // bne
+                            if(readdata1R != readdata2R) begin
+                                aluresult1 <= 1'b1;
+                            end 
+                            else begin
+                                aluresult1 <= 1'b0;
                             end
                         end
                     endcase

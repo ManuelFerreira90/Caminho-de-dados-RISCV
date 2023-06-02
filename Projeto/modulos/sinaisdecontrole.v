@@ -2,7 +2,6 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
     input wire [2:0] tipo; //Pega os 3 bits mais significativos do opcode para comparação
     input wire [2:0] funct3;
     input wire [6:0] funct7;
-    //input wire aluresult1;
     input wire clk;
     input wire [3:0] estado;
     output reg regiwrite;
@@ -14,7 +13,9 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
     output reg memtoreg;
     output reg alusrc;
 
+    // gerando sinais de controle
     always @(posedge clk)begin
+        // estado para gerar valores de controle para a alu realizar determina operação
         if(estado == 4'b0010 ) begin
             case (tipo)
                 3'b000: begin //lw
@@ -117,6 +118,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                 end
             endcase
         end
+        // estado para gerar valores de controle para a leitura ou escrita
         if(estado == 4'b1111 )begin
             case (tipo)
                 3'b000: begin //lw
@@ -209,13 +211,27 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                     endcase
                 end
                 3'b110: begin //beq
-                    regiwrite <= 1'b0;
-                    memwrite <= 1'b0;
-                    memread <= 1'b0;
-                    alucontrol <= 4'b0110;
-                    branch <= 1'b1;
-                    memtoreg <= 1'b0;
-                    alusrc <= 1'b1;
+                    case (funct3)
+                        3'b000 : begin
+                            regiwrite <= 1'b0;
+                            memwrite <= 1'b0;
+                            memread <= 1'b0;
+                            alucontrol <= 4'b0110;
+                            branch <= 1'b1;
+                            memtoreg <= 1'b0;
+                            alusrc <= 1'b1;
+                        end
+                        3'b001 : begin
+                            regiwrite <= 1'b0;
+                            memwrite <= 1'b0;
+                            memread <= 1'b0;
+                            alucontrol <= 4'b1111;
+                            branch <= 1'b1;
+                            memtoreg <= 1'b0;
+                            alusrc <= 1'b1;
+                        end
+                    endcase
+
                 end
             endcase
         end
