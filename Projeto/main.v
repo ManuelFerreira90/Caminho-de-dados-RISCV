@@ -55,9 +55,9 @@ module main;
     parameter IF = 4'b0000, //posição instrução
               ID = 4'b0001, //leitura
               EX = 4'b0010, //execução
+              AUX1 = 4'b0101, //auxiliar para atraso
               MEM = 4'b0011, //leitura memoria
               WB = 4'b0100, //escrita
-              AUX1 = 4'b0101, //auxiliar para atraso
               AUX2 = 4'b0110, //auxiliar para atraso
               AUX3 = 4'b0111, //auxiliar para atraso
               SUMPC = 4'b1000, //soma pc
@@ -97,15 +97,15 @@ module main;
             end
         end
         EX: begin
+            estado <= AUX1;
+        end
+        AUX1: begin
             estado <= MEM;
         end
         MEM: begin
             estado <= WB;
         end
         WB: begin
-            estado <= AUX1;
-        end
-        AUX1: begin
             estado <= AUX2;
         end
         AUX2: begin
