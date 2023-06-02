@@ -9,10 +9,12 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
     input [3:0] alucontrol;
     output reg aluresult1;
     output reg [31:0] aluresult2;
-    output reg pcsrc;
+    output pcsrc;
+
+    assign pcsrc = aluresult1 & branch;
 
     always @(posedge clk) begin
-        if ((estado == 4'b0101) || (estado == 4'b0110 ) || (estado == 4'b0111)) begin // Estado de execução
+        if ((estado == 4'b0101) || (estado == 4'b0110 )) begin // Estado de execução
             case (alusrc)
                 1'b0: begin // operações para funções que não usam imediato
                     case (alucontrol)
@@ -63,7 +65,6 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
                     endcase
                 end
             endcase
-            pcsrc <= aluresult1 & branch;
         end
     end
     
