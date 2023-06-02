@@ -51,7 +51,7 @@ module memoria (clk, aluresult2, rs2, reddataM, memwrite, memread, immediate, me
 
     always @(posedge clk) begin
         //immediateaux <= immediate / 4;
-        if(estado == 4'b0011) begin
+        if((estado == 4'b0011) || (estado == 4'b0101) || (estado == 4'b0110 ) || (estado == 4'b0111)) begin
             if(memwrite == 1'b1) begin
                 memoria[aluresult2] <= rs2;
             end
