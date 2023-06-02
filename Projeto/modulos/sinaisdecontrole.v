@@ -84,7 +84,24 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                         memtoreg <= 1'b0;
                         alusrc <= 1'b0;
                     end
-                    
+                    3'b111 : begin //and
+                        regiwrite <= 1'b1;
+                        memwrite <= 1'b0;
+                        memread <= 1'b0;
+                        alucontrol <= 4'b0000;
+                        branch <= 1'b0;
+                        memtoreg <= 1'b0;
+                        alusrc <= 1'b0;
+                    end
+                    3'b110 : begin
+                        regiwrite <= 1'b1;
+                        memwrite <= 1'b0;
+                        memread <= 1'b0;
+                        alucontrol <= 4'b0001;
+                        branch <= 1'b0;
+                        memtoreg <= 1'b0;
+                        alusrc <= 1'b0;
+                    end
                 endcase
             end
             3'b110: begin //beq

@@ -16,6 +16,14 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
             case (alusrc)
                 1'b0: begin // operações para funções que não usam imediato
                     case (alucontrol)
+                        4'b0000: begin // and
+                            aluresult2 <= readdata1R & readdata2R;
+                            aluresult1 <= 1'b0;
+                        end
+                        4'b0001: begin // or
+                            aluresult2 <= readdata1R | readdata2R;
+                            aluresult1 <= 1'b0;
+                        end
                         4'b0010: begin // soma
                             aluresult2 <= readdata1R + readdata2R;
                             aluresult1 <= 1'b0;
