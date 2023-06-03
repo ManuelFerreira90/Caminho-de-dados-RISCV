@@ -29,7 +29,7 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
             rd <= instrucao[11:7];
             rs1 <= instrucao[19:15];
             funct3 <= instrucao[14:12];
-            if(instrucao[31] == 1'b1)begin
+            if(instrucao[31] == 1'b1)begin // se o imediato for negativo
               immediate <= (~instrucao[31:20]) + 1'b1;
               negativo <= 1'b1;
             end
@@ -56,7 +56,7 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
             tipo <= 3'b011;
           end 
           3'b110: begin //formato sb
-            if(instrucao[31] == 1'b1)begin
+            if(instrucao[31] == 1'b1)begin // se o imediato for negativo
               immediate <= (~{instrucao[31], instrucao[7], instrucao[30:25], instrucao[11:8]} + 1) << 1;
               negativo <= 1'b1;
             end

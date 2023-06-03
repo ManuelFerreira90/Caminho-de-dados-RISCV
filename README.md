@@ -33,6 +33,12 @@
         esse caminho de dados suportas as seguintes instruções:
             ADD, SUB, LW, SW, XOR, SLR, AND, OR, ADDI, BEQ, BNE
 
+            somente as instruções BEQ, BNE e ADDI aceitam imediato negativo
+
+            também pode ser usado nosso montador assembly para converter assembly em binário,
+            mas esse monstador não aceita rótulo, então nas função de branch forneça o
+            imediato para onde o desvio será tomado
+
 
         Execução das instruções:
         addi x7, x7, 5
