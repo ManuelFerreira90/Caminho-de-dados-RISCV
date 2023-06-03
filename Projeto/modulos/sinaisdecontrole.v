@@ -19,12 +19,12 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
         if(estado == 4'b0010 ) begin
             case (tipo)
                 3'b000: begin //lw
-                    regiwrite <= 1'b1;
+                    regiwrite <= 1'bx;
                     memwrite <= 1'bx;
                     memread <= 1'bx;
                     alucontrol <= 4'b0010;
                     branch <= 1'b0;
-                    memtoreg <= 1'b0;
+                    memtoreg <= 1'b1;
                     alusrc <= 1'b1;
                 end
                 3'b001: begin //addi
@@ -38,7 +38,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                 end
                 3'b010: begin //sw
                     regiwrite <= 1'bx;
-                    memwrite <= 1'b1;
+                    memwrite <= 1'bx;
                     memread <= 1'bx;
                     alucontrol <= 4'b0010;
                     branch <= 1'b0;
