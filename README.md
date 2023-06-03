@@ -1,5 +1,4 @@
 # Caminho-de-dados-RISCV
-
     Para execução do caminho de dados abra o terminal da pasta projeto e digite 
         
                             "./compilar.sh"
@@ -28,7 +27,9 @@
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3 
-                (imagem1)
+<div align="center">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
+</div>
 
         esse caminho de dados suportas as seguintes instruções:
             ADD, SUB, LW, SW, XOR, SLR, AND, OR, ADDI, BEQ, BNE
@@ -45,5 +46,8 @@
         loop:
         addi x7, x7, -1
         bne x7, x0, loop 
+<div align="center">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/532afe02-6da2-4260-aee6-1041de11a088">
+</div>
 
 
