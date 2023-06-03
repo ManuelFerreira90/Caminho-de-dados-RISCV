@@ -10,9 +10,11 @@ while(num != 9):
     num = int(input("Digite uma opcao: "))
 
     #Limpar tela do terminal
-    os.system('clear')
+
+    diretorio_atual = os.getcwd()
+    print("Diretório atual:", diretorio_atual)
     if num == 1:
-        pasta = "./Montador_assembly/Arquivos_teste/"
+        pasta = "Montador_assembly/Arquivos_teste/"
         files = os.listdir(pasta) 
         tam = len(files)
         print("ARQUIVOS: \n")

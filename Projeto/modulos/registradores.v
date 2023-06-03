@@ -1,20 +1,21 @@
-module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memtoreg, aluresult2, reddataM, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31, estado);
+module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memtoreg, writedataR, reddataM, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31, estado);
     input wire clk;
-    input [2:0] estado;
+    input [3:0] estado;
     input [4:0] rs1;
     input [4:0] rs2;
     input [4:0] rd;
     input regiwrite;
     input memtoreg;
-    input [31:0] aluresult2;
+    input [31:0] writedataR;
     input [31:0] reddataM;
-    output reg [31:0] readdata1R;
-    output reg [31:0] readdata2R;
+    output [31:0] readdata1R;
+    output [31:0] readdata2R;
     output reg [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
     output reg [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
     output reg [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
     reg [31:0] bancoregistradores [0:31];
 
+    // lendo os valores dos registradores no arquivo registradores.bin
     initial begin
         $readmemb("entrada/registradores.bin", bancoregistradores); // Lendo registradores
         reg0 <= bancoregistradores[0];
@@ -51,18 +52,24 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
         reg31 <= bancoregistradores[31];
     end
 
+    // lendo os valores dos registradores usados na alu
+    assign readdata1R = bancoregistradores[rs1];
+    assign readdata2R = bancoregistradores[rs2];
+
+    // escrevendo no registrador
     always @(posedge clk) begin
-        if(estado == 3'b010) begin // Estado de execução
-            readdata1R <= bancoregistradores[rs1];
-            readdata2R <= bancoregistradores[rs2];
+        // estado onde o registrador é escrito
+        if ((estado == 4'b0110 ) || (estado == 4'b0111)) begin // Estado de execução
+            // regiwirte mostra se o registrador é escrito ou não
             case (regiwrite)
                 1'b1: begin
+                    // memtoreg mostra se o dado vem da memória ou da alu
                     case (memtoreg)
                         1'b1: begin
                             bancoregistradores[rd] <= reddataM;
                         end
                         1'b0: begin
-                            bancoregistradores[rd] <= aluresult2;
+                            bancoregistradores[rd] <= writedataR;
                         end
                     endcase
                 end 

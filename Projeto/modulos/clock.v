@@ -5,6 +5,7 @@ module clock (clk);
         clk = 1'b0;
     end
 
+    // Clock
     always begin
         case (clk)
             1'b0: #1 clk <= 1'b1;

@@ -1,21 +1,22 @@
 import functions.montador as mont
 
 def lerArquivo(arquivo):
+    print("arq => ", arquivo)
     
     try:
         nomeArq = str(arquivo).replace(".asm", "")
-        with open("Montador_assembly/Arquivos_saida/output_"+ nomeArq +".txt", "w") as arq1:
+        with open("../Projeto/entrada/assembler.bin", "w") as arq1:
             arq1.truncate(0)
             arq1.close()
-        with open("Montador_assembly/Arquivos_saida/Binario/output_"+ nomeArq +".txt", "w") as arq1:
-            arq1.truncate(0)
-            arq1.close()
-        with open("Montador_assembly/Arquivos_saida/Hexadecimal/output_"+ nomeArq +".txt", "w") as arq1:
-            arq1.truncate(0)
-            arq1.close()
-        with open("Montador_assembly/Arquivos_saida/Octal/output_"+ nomeArq +".txt", "w") as arq1:
-            arq1.truncate(0)
-            arq1.close()
+        # with open("Montador_assembly/Arquivos_saida/Binario/output_"+ nomeArq +".txt", "w") as arq1:
+        #     arq1.truncate(0)
+        #     arq1.close()
+        # with open("Montador_assembly/Arquivos_saida/Hexadecimal/output_"+ nomeArq +".txt", "w") as arq1:
+        #     arq1.truncate(0)
+        #     arq1.close()
+        # with open("Montador_assembly/Arquivos_saida/Octal/output_"+ nomeArq +".txt", "w") as arq1:
+        #     arq1.truncate(0)
+        #     arq1.close()
             
         with open("Montador_assembly/Arquivos_teste/"+arquivo) as arq:
             texto = arq.readlines()
