@@ -1,1 +1,1 @@
-https://www.chipverify.com/verilog/verilog-concatenation
+https://www.chipverify.com/verilog/

@@ -1,5 +1,5 @@
 # Caminho-de-dados-RISCV
-    Para execução do caminho de dados abra o terminal da pasta projeto e digite 
+    Para execução do caminho de dados abra o terminal da pasta projeto e digite:
         
                             "./compilar.sh"
     
@@ -16,17 +16,18 @@
             então essa função carregara para x1 o valor contido na posição 1 da memória, se fosse 8 
             a posição 2, assim por diante.
 
-        registradores.bin: contém os valores iniciais dos registradores indo de x0 a x31
+        registradores.bin: contém os valores iniciais dos registradores indo de x0 a x31, eles estão
+                           nomeados de reg0 a reg31.
 
         assim é possível inicar tanto a memória e os registradores com valores Predefinidos
 
         ALERTA: sempre deve se alterar no modulo lerinstrucao.v o tamanho do array instrucoes 
-                para a quantidade de instruções que deseja executar - 1
+                para a quantidade de instruções que deseja executar - 1.
                 Exemplo: addi x5, x5, 10
                          srl x8 , x8, x5
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
-                as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3 
+                as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
 </div>
@@ -34,11 +35,11 @@
         esse caminho de dados suportas as seguintes instruções:
             ADD, SUB, LW, SW, XOR, SLR, AND, OR, ADDI, BEQ, BNE
 
-            somente as instruções BEQ, BNE e ADDI aceitam imediato negativo
+            somente as instruções BEQ, BNE e ADDI aceitam imediato negativo.
 
             também pode ser usado nosso montador assembly para converter assembly em binário,
             mas esse monstador não aceita rótulo, então nas função de branch forneça o
-            imediato para onde o desvio será tomado
+            imediato para onde o desvio será tomado.
 
 
         Execução das instruções:

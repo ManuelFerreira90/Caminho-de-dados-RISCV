@@ -9,7 +9,12 @@
 
 //lw sw sub xor addi srl beq
 
-module main;
+module main();
+
+    input clk, rst;
+    //input [31:0] PC; 
+    //input [3:0] estado;
+
     //IF - para ler a instrução
     wire [31:0] instrucao;
     wire [6:0] opcode;
@@ -22,7 +27,7 @@ module main;
     wire [2:0] tipo; // tipo da instrução
     wire [31:0] PC; // posição para ler a instrução
     wire negativo; // usado para quando o immediate é negativo
-    wire clk;
+    //wire clk;
 
     //ID - para ler os registradores
     wire [31:0] readdata1R; //R para indicar que pertence ao banco de registradores
@@ -75,9 +80,9 @@ module main;
 
     // inciando a maquina de estados e exportando arquivo teste
     initial begin
-        $dumpfile("wavefile.vcd");
-        $dumpvars;
-        estado <= IF;
+         $dumpfile("wavefile.vcd");
+         $dumpvars;
+         estado <= IF;
     end
 
     //gerar clock
@@ -98,47 +103,52 @@ module main;
     memoria memoria(.clk(clk), .aluresult2(aluresult2), .readdata2R(readdata2R), .reddataM(reddataM), .memwrite(memwrite), .memread(memread), .immediate(immediate), .mem0(mem0), .mem1(mem1), .mem2(mem2), .mem3(mem3), .mem4(mem4), .mem5(mem5), .mem6(mem6), .mem7(mem7), .mem8(mem8), .mem9(mem9), .mem10(mem10), .mem11(mem11),.mem12(mem12), .mem13(mem13), .mem14(mem14), .mem15(mem15), .mem16(mem16), .mem17(mem17), .mem18(mem18), .mem19(mem19), .mem20(mem20), .mem21(mem21), .mem22(mem22), .mem23(mem23), .mem24(mem24), .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), .estado(estado), .writedataR(writedataR));
 
     //maquina de estados
-    always @(posedge clk) begin
-        case(estado)
-        IF: begin
-             estado <= ID;
-        end
-        ID: begin
-            if(instrucao != 0)begin
-                estado <= EX;
+    always @(posedge clk, posedge rst) begin
+        if(rst == 1'b1)begin
+            estado <= FIM;
+        end 
+        else begin
+                case(estado)
+            IF: begin
+                estado <= ID;
             end
-            else begin
-                estado <= FIM;
+            ID: begin
+                if(instrucao != 0)begin
+                    estado <= EX;
+                end
+                else begin
+                    estado <= FIM;
+                end
             end
+            EX: begin
+                estado <= AUX1;
+            end
+            AUX1: begin
+                estado <= AUX2;
+            end
+            AUX2: begin
+                estado <= MEM;
+            end
+            MEM: begin
+                estado <= WB;
+            end
+            WB: begin
+                estado <= AUX3;
+            end
+            AUX3: begin
+                estado <= AUX4;
+            end
+            AUX4: begin
+                estado <= SUMPC;
+            end
+            SUMPC: begin
+                estado <= IF;
+            end
+            FIM : begin
+                $finish;
+            end
+            endcase
         end
-        EX: begin
-            estado <= AUX1;
-        end
-        AUX1: begin
-            estado <= AUX2;
-        end
-        AUX2: begin
-            estado <= MEM;
-        end
-        MEM: begin
-            estado <= WB;
-        end
-        WB: begin
-            estado <= AUX3;
-        end
-        AUX3: begin
-            estado <= AUX4;
-        end
-        AUX4: begin
-            estado <= SUMPC;
-        end
-        SUMPC: begin
-            estado <= IF;
-        end
-        FIM : begin
-            $finish;
-        end
-        endcase
     end
 
 
