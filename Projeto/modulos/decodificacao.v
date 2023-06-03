@@ -1,16 +1,16 @@
 module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate, tipo, clk, estado, negativo);
-    input wire [31:0] instrucao;
+    input wire [31:0] instrucao; 
     input wire clk;
     input wire [3:0] estado;
     output reg [6:0] opcode;
-    output reg [4:0] rd;
-    output reg [4:0] rs1;
-    output reg [4:0] rs2;
-    output reg [2:0] funct3;
+    output reg [4:0] rd; // registrador de escrita
+    output reg [4:0] rs1; // registrador de leitura 1
+    output reg [4:0] rs2; // registrador de leitura 2
+    output reg [2:0] funct3; 
     output reg [6:0] funct7;
     output reg [11:0] immediate; 
-    output reg [2:0] tipo;
-    output reg negativo;
+    output reg [2:0] tipo; // determinar de qual formato é a instrução
+    output reg negativo; // sinal de controle para saber se o imediato é negativo ou não
 
     always @(posedge clk) begin
       // estados em a decoficação é usada

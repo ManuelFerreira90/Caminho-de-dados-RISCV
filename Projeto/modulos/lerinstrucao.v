@@ -3,7 +3,8 @@ module lerinstrucao (instrucao, PC, clk, estado);
     input wire clk;
     input wire [3:0] estado;
     output reg [31:0] instrucao;
-    reg [31:0] instrucoes [0:4]; // Memória de instruções
+    // alterar confome o tamanho do arquivo assembler.bin
+    reg [31:0] instrucoes [0:3]; // Memória de instruções
 
     // Lendo instruções do arquivo assembler.bin
     initial begin

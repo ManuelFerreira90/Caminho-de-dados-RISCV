@@ -4,8 +4,9 @@ module somapc (PC, clk, pcsrc, immediate, estado, negativo);
   input pcsrc;
   input [11:0] immediate;
   input negativo;
-  output reg [31:0] PC;
+  output reg [31:0] PC; // posição da próxima instrução
 
+  // inicializa o PC
   initial begin
       PC <= 0;
   end
@@ -13,11 +14,13 @@ module somapc (PC, clk, pcsrc, immediate, estado, negativo);
   // incrementa o PC
   always @(posedge clk) begin
     if(estado == 4'b1000) begin
+      // sinais de controle para o pc saber se vai ser incrementado com imeadiato ou não
       case (pcsrc)
           1'b0: begin
             PC <= PC + 1; // proxima instrução
           end
           1'b1: begin
+            // sinal de controle para saber se o imediato é negativo ou não
             if(negativo == 1'b1)begin
               PC <= PC - (immediate/4); // caso haja desvio
             end

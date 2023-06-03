@@ -13,14 +13,14 @@ module main;
     //IF - para ler a instrução
     wire [31:0] instrucao;
     wire [6:0] opcode;
-    wire [4:0] rd;
-    wire [4:0] rs1;
-    wire [4:0] rs2;
-    wire [2:0] funct3;
+    wire [4:0] rd; // registrador de destino
+    wire [4:0] rs1; // registrador de leitura 1
+    wire [4:0] rs2; // registrador de leitura 2
+    wire [2:0] funct3; 
     wire [6:0] funct7;
     wire [11:0] immediate;
-    wire [2:0] tipo;
-    wire [31:0] PC;
+    wire [2:0] tipo; // tipo da instrução
+    wire [31:0] PC; // posição para ler a instrução
     wire negativo; // usado para quando o immediate é negativo
     wire clk;
 
@@ -73,6 +73,7 @@ module main;
     // //maquina de estados
     reg [3:0] estado;
 
+    // inciando a maquina de estados e exportando arquivo teste
     initial begin
         $dumpfile("wavefile.vcd");
         $dumpvars;

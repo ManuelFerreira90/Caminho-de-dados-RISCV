@@ -1,5 +1,5 @@
 module clock (clk);
-    output reg clk;
+    output reg clk; // clock
 
     initial begin
         clk = 1'b0;

@@ -16,8 +16,13 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
     // gerando sinais de controle
     always @(posedge clk)begin
         // estado para gerar valores de controle para a alu realizar determina operação
+        /* 
+        inicialmente os sinais de controle de escrita e leitura são iniciados como don't care 
+        para não ocorrer a escrita no registrar antes do resultado da alu estiver pronto
+        */
         if(estado == 4'b0010 ) begin
             case (tipo)
+                // sinais de controle para i
                 3'b000: begin //lw
                     regiwrite <= 1'bx;
                     memwrite <= 1'bx;
@@ -27,6 +32,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                     memtoreg <= 1'b1;
                     alusrc <= 1'b1;
                 end
+                // sinais de controle para i
                 3'b001: begin //addi
                     regiwrite <= 1'bx;
                     memwrite <= 1'bx;
@@ -36,6 +42,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                     memtoreg <= 1'b0;
                     alusrc <= 1'b1;
                 end
+                // sinais de controle para s
                 3'b010: begin //sw
                     regiwrite <= 1'bx;
                     memwrite <= 1'bx;
@@ -45,9 +52,12 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                     memtoreg <= 1'b1;
                     alusrc <= 1'b1;
                 end
+                // sinais de controle para r
                 3'b011: begin
+                    // como o opcode é igual para todos os tipos de r, é necessário verificar o funct3
                     case (funct3)
                         3'b000 : begin //sub e soma
+                            // add e sub são iguais, a diferença é o funct7
                             case(funct7[6:5])
                                 2'b00: begin
                                     regiwrite <= 1'bx;
@@ -107,6 +117,7 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
                         end
                     endcase
                 end
+                // sinais de controle para sb
                 3'b110: begin //beq
                     regiwrite <= 1'bx;
                     memwrite <= 1'bx;
@@ -119,6 +130,10 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
             endcase
         end
         // estado para gerar valores de controle para a leitura ou escrita
+        /* 
+        nesse último estado após o resultado vindo da alu estiver pronto os sinais de controle 
+        de escrita e lei são gerados
+        */
         if(estado == 4'b1111 )begin
             case (tipo)
                 3'b000: begin //lw

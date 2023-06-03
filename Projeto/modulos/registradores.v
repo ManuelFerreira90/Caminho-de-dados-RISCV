@@ -17,7 +17,8 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
 
     // lendo os valores dos registradores no arquivo registradores.bin
     initial begin
-        $readmemb("entrada/registradores.bin", bancoregistradores); // Lendo registradores
+        $readmemb("entrada/registradores.bin", bancoregistradores); // Lendo registradores do arquivo registradores.bin
+        // registradores para visualização de cada registrador 
         reg0 <= bancoregistradores[0];
         reg1 <= bancoregistradores[1];
         reg2 <= bancoregistradores[2];
@@ -74,6 +75,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
                     endcase
                 end 
             endcase
+            // atualizando os registradores para visualização
             reg0 <= bancoregistradores[0];
             reg1 <= bancoregistradores[1];
             reg2 <= bancoregistradores[2];
