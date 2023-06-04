@@ -9,9 +9,9 @@
 
 //lw sw sub xor addi srl beq
 
-module main();
+module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31);
 
-    input clk, rst;
+    input wire clk, rst;
     //input [31:0] PC; 
     //input [3:0] estado;
 
@@ -34,9 +34,9 @@ module main();
     wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
     wire [31:0] writedataR; //R para indicar que pertence ao banco de registradores
     //registradores de x0 a x31
-    wire [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
-    wire [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
-    wire [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
+    input [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
+    input [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
+    input [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX - para executar a instrução
     //resultado da alu
@@ -80,13 +80,13 @@ module main();
 
     // inciando a maquina de estados e exportando arquivo teste
     initial begin
-         $dumpfile("wavefile.vcd");
-         $dumpvars;
+         //$dumpfile("wavefile.vcd");
+         //$dumpvars;
          estado <= IF;
     end
 
     //gerar clock
-    clock clock(.clk(clk));
+    //clock clock(.clk(clk));
     //calcular o endereço
     somapc somapc(.PC(PC), .clk(clk), .pcsrc(pcsrc), .immediate(immediate), .estado(estado), .negativo(negativo));
     //leitura da instrução da instruction memory
@@ -105,7 +105,7 @@ module main();
     //maquina de estados
     always @(posedge clk, posedge rst) begin
         if(rst == 1'b1)begin
-            estado <= FIM;
+            estado <= IF;
         end 
         else begin
                 case(estado)
