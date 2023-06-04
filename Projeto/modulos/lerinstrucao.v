@@ -14,6 +14,7 @@ module lerinstrucao (instrucao, PC, clk, estado);
 
     // Atualizando instrução a cada ciclo de clock
     always @(posedge clk) begin
+        
         if(estado == 4'b0000)begin
             instrucao <= instrucoes[PC];
         end

@@ -145,7 +145,9 @@ module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9
                 estado <= IF;
             end
             FIM : begin
-                $finish;
+                if(rst == 1'b0) begin
+                    estado <= IF;
+                end
             end
             endcase
         end

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-iverilog main.v 
+iverilog testbench.v 
 vvp a.out
-gtkwave wavefile.vcd 
+gtkwave testbench.vcd 
