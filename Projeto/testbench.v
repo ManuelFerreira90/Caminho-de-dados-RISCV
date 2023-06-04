@@ -10,7 +10,7 @@ module caminho_tb;
     initial begin
         $dumpfile("testbench.vcd");
         $dumpvars(0, caminho_tb);
-        $display("Iniciando simulação");
+        $display("Iniciando simulacao");
         rst_tb = 0;
         #400;
         rst_tb = 1;
