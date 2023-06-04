@@ -4,10 +4,11 @@
 module caminho_tb;
 
     reg clk_tb, rst_tb;
-    reg [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
+    wire [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
     main main (.clk(clk_tb), .rst(rst_tb), .reg0(reg0), .reg1(reg1), .reg2(reg2), .reg3(reg3), .reg4(reg4), .reg5(reg5), .reg6(reg6), .reg7(reg7), .reg8(reg8), .reg9(reg9), .reg10(reg10), .reg11(reg11),.reg12(reg12), .reg13(reg13), .reg14(reg14), .reg15(reg15), .reg16(reg16), .reg17(reg17), .reg18(reg18), .reg19(reg19), .reg20(reg20), .reg21(reg21), .reg22(reg22), .reg23(reg23), .reg24(reg24), .reg25(reg25), .reg26(reg26), .reg27(reg27), .reg28(reg28), .reg29(reg29), .reg30(reg30), .reg31(reg31));
 
     initial begin
+        rst_tb = 0;
         $dumpfile("_wavefile.vcd");
         $dumpvars(0, caminho_tb);
         
@@ -44,17 +45,8 @@ module caminho_tb;
         // $monitor("Registrador [30] = %b", reg30);
         // $monitor("Registrador [31] = %b", reg31);
 
-        rst_tb = 0;
-        #5
-
-        rst_tb = 1;
-        #5
-
-        rst_tb = 0;
-        #5
-
-
         #200
+        $display("Registrador [7] = %b", reg7);
         $finish;
         
     end

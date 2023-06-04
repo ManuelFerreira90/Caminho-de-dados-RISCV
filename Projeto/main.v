@@ -2,7 +2,7 @@
 `include "modulos/decodificacao.v"
 `include "modulos/sinaisdecontrole.v"
 `include "modulos/somapc.v"
-`include "modulos/clock.v"
+//`include "modulos/clock.v"
 `include "modulos/registradores.v"
 `include "modulos/alu.v"
 `include "modulos/memoria.v"
@@ -34,9 +34,9 @@ module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9
     wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
     wire [31:0] writedataR; //R para indicar que pertence ao banco de registradores
     //registradores de x0 a x31
-    input [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
-    input [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
-    input [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
+    output [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
+    output [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
+    output [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX - para executar a instrução
     //resultado da alu
