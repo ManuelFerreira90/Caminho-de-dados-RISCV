@@ -5,9 +5,10 @@ def lerArquivo(arquivo):
     
     try:
         nomeArq = str(arquivo).replace(".asm", "")
-        with open("../Projeto/entrada/assembler.bin", "w") as arq1:
+        with open("../entrada/assembler.bin", "w") as arq1:
             arq1.truncate(0)
             arq1.close()
+
         # with open("Montador_assembly/Arquivos_saida/Binario/output_"+ nomeArq +".txt", "w") as arq1:
         #     arq1.truncate(0)
         #     arq1.close()
@@ -18,7 +19,7 @@ def lerArquivo(arquivo):
         #     arq1.truncate(0)
         #     arq1.close()
             
-        with open("Montador_assembly/Arquivos_teste/"+arquivo) as arq:
+        with open("Arquivos_teste/"+arquivo) as arq:
             texto = arq.readlines()
             print("\nConteudo:")
             #variavel para armzenar cada linha do comando em assembly
@@ -55,13 +56,14 @@ def tratarConteudo(instrucao):
     mont.indentificar_funcao(instrucao, num, x)
 
 def mostrar_conteudo(x):
-    try:
-        print("")
-        nomeArq = str(x).replace(".asm", "")
-        with open("Montador_assembly/Arquivos_saida/output_" + nomeArq + ".txt") as arq1:
-            mostrar = arq1.read()
-            print(mostrar)  
-        arq1.close()
-    except FileNotFoundError:
-        msg = "Infelizmente, ocorreu um erro no arquivo de saida!"
-        print(msg)
+    print("")
+    # try:
+    #     print("")
+    #     nomeArq = str(x).replace(".asm", "")
+    #     with open("../Projeto/entrada/assembler.bin") as arq1:
+    #         mostrar = arq1.read()
+    #         print(mostrar)  
+    #     arq1.close()
+    # except FileNotFoundError:
+    #     msg = "Infelizmente, ocorreu um erro no arquivo de saida!"
+    #     print(msg)

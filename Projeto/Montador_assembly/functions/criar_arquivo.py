@@ -1,11 +1,11 @@
 def criarArquivo_bin(instrucao, num, nome):
     nomeArq = 'assembler'
     if num == 1 or num == 2: #Para leitura de arquivo 
-        with open("../Projeto/entrada/" + nomeArq + ".bin", "a") as arq:
+        with open("../entrada/" + nomeArq + ".bin", "a") as arq:
             arq.write(instrucao + "\n")
             arq.close()
     elif num == 2: #Para incersao individual, pelo teclado
-        with open("../Projeto/entrada/" + nomeArq + ".bin", "a") as arq:
+        with open("../entrada/" + nomeArq + ".bin", "a") as arq:
             arq.write(instrucao + "\n")
             arq.close()
 

@@ -14,8 +14,9 @@ while(num != 9):
     diretorio_atual = os.getcwd()
     print("Diretório atual:", diretorio_atual)
     if num == 1:
-        pasta = "Montador_assembly/Arquivos_teste/"
+        pasta = "Arquivos_teste/"
         files = os.listdir(pasta) 
+        print("Files => ", files)
         tam = len(files)
         print("ARQUIVOS: \n")
         for i in range(tam):
