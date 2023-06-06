@@ -28,6 +28,12 @@
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
+
+                Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
+                pode acontecer do número estar muito grande, isso acontece pois está em complemento de 
+                dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o resultado
+                correto.
+
                 
         Limitação: a memória so contém apenas 32bits e acessos para endereços maiores que 32 
                     o valor não sera computado, pois contamos com apenas 32 posições de memória

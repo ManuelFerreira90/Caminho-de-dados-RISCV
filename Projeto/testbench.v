@@ -1,5 +1,4 @@
 `include "main.v"
-`include "modulos/clock.v"
 
 module caminho_tb;
 

@@ -27,7 +27,7 @@ mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31);
     wire [4:0] rs2; // registrador de leitura 2
     wire [2:0] funct3; 
     wire [6:0] funct7;
-    wire [31:0] immediate;
+    wire [11:0] immediate;
     wire [2:0] tipo; // tipo da instrução
     wire [31:0] PC; // posição para ler a instrução
     wire negativo; // usado para quando o immediate é negativo

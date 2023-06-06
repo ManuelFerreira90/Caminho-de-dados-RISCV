@@ -2,7 +2,7 @@ module somapc (PC, clk, pcsrc, immediate, estado, negativo);
   input wire clk;
   input wire [3:0] estado;
   input pcsrc;
-  input [31:0] immediate;
+  input [11:0] immediate;
   input negativo;
   output reg [31:0] PC; // posição da próxima instrução
 
