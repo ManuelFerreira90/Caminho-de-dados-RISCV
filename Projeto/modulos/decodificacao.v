@@ -61,7 +61,7 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
               negativo <= 1'b1;
             end
             else begin
-              immediate <= {instrucao[31:25], instrucao[11:7]};
+              immediate <= {instrucao[31], instrucao[7], instrucao[30:25], instrucao[11:8]} << 1;
               negativo <= 1'b0;
             end
             rs1 <= instrucao[19:15];
