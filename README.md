@@ -77,5 +77,13 @@
         or x1, x1, x0
         sw x1, 0(x0)
 
+<div align="center">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/532afe02-6da2-4260-aee6-1041de11a088">
+</div>
+<div align="center">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/532afe02-6da2-4260-aee6-1041de11a088">
+</div>
+![resultado1](https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/aae3f3c5-9a7a-42c6-be0b-950ab7f3f0e5)
+![resultados2](https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/7aecd68f-3509-4f30-908f-a50df1542764)
 
 
