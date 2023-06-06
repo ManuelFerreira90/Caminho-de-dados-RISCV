@@ -4,7 +4,7 @@ module alu (clk, readdata1R, readdata2R, alusrc, alucontrol, immediate, aluresul
     input [31:0] readdata1R; // registrador de leitura 1
     input [31:0] readdata2R; // registrador de leitura 2
     input alusrc; // sinal de controle para saber se a alu vai usar imediato ou não
-    input [11:0] immediate; // imediato
+    input [31:0] immediate; // imediato
     input branch; // sinal de controle para o desvio
     input [3:0] alucontrol; // sinal de controle para qual operação a alu vai fazer
     input negativo; // sinal de controle para saber se o imediato é negativo ou não

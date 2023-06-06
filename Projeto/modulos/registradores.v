@@ -67,10 +67,14 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
                     // memtoreg mostra se o dado vem da memória ou da alu
                     case (memtoreg)
                         1'b1: begin
-                            bancoregistradores[rd] <= reddataM;
+                            if(rd != 0) begin
+                                bancoregistradores[rd] <= reddataM;
+                            end          
                         end
                         1'b0: begin
-                            bancoregistradores[rd] <= writedataR;
+                            if(rd != 0) begin
+                                bancoregistradores[rd] <= writedataR;
+                            end
                         end
                     endcase
                 end 

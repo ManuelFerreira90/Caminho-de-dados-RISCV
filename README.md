@@ -28,6 +28,9 @@
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
+                
+        Limitação: a memória so contém apenas 32bits acessos para endereços maiores que 32bits 
+                    o valor não sera computado.
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
 </div>

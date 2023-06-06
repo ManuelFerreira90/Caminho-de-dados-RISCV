@@ -8,7 +8,7 @@ module decodificacao (instrucao, opcode, rd, rs1, rs2, funct3, funct7, immediate
     output reg [4:0] rs2; // registrador de leitura 2
     output reg [2:0] funct3; 
     output reg [6:0] funct7;
-    output reg [11:0] immediate; 
+    output reg [31:0] immediate; 
     output reg [2:0] tipo; // determinar de qual formato é a instrução
     output reg negativo; // sinal de controle para saber se o imediato é negativo ou não
 

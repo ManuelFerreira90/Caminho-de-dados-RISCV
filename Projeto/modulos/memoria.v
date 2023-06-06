@@ -5,7 +5,7 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
     input [31:0] readdata2R; // registrador de leitura 2
     input memwrite; // sinal de controle para saber se vai ser escrito na memoria
     input memread; // sinal de controle para saber se vai ser lido na memoria
-    input [11:0] immediate;
+    input [31:0] immediate;
     output reg [31:0] reddataM; // valor que vai ser lido da memoria e escrito no registrador
     output reg [31:0] writedataR; // valor que vai ser escrito no registrador
     output reg [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;

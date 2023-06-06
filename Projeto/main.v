@@ -2,18 +2,22 @@
 `include "modulos/decodificacao.v"
 `include "modulos/sinaisdecontrole.v"
 `include "modulos/somapc.v"
-//`include "modulos/clock.v"
 `include "modulos/registradores.v"
 `include "modulos/alu.v"
 `include "modulos/memoria.v"
 
 //lw sw sub xor addi srl beq
 
-module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31);
+module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, 
+reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, 
+reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, 
+reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, 
+reg31, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, 
+mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, 
+mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, 
+mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31);
 
     input wire clk, rst;
-    //input [31:0] PC; 
-    //input [3:0] estado;
 
     //IF - para ler a instrução
     wire [31:0] instrucao;
@@ -23,7 +27,7 @@ module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9
     wire [4:0] rs2; // registrador de leitura 2
     wire [2:0] funct3; 
     wire [6:0] funct7;
-    wire [11:0] immediate;
+    wire [31:0] immediate;
     wire [2:0] tipo; // tipo da instrução
     wire [31:0] PC; // posição para ler a instrução
     wire negativo; // usado para quando o immediate é negativo
@@ -46,9 +50,9 @@ module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9
     //MEM - para ler/escrever na memoria
     wire [31:0] reddataM; //M para indicar que pertence a memoria
     //campos da memoria
-    wire [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
-    wire [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
-    wire [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
+    output [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
+    output [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
+    output [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
 
     //sinais de controle
     wire regiwrite;
@@ -80,13 +84,9 @@ module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9
 
     // inciando a maquina de estados e exportando arquivo teste
     initial begin
-         //$dumpfile("wavefile.vcd");
-         //$dumpvars;
          estado <= IF;
     end
 
-    //gerar clock
-    //clock clock(.clk(clk));
     //calcular o endereço
     somapc somapc(.PC(PC), .clk(clk), .pcsrc(pcsrc), .immediate(immediate), .estado(estado), 
     .negativo(negativo));
