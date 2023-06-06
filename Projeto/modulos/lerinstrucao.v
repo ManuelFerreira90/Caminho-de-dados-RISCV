@@ -4,12 +4,12 @@ module lerinstrucao (instrucao, PC, clk, estado);
     input wire [3:0] estado;
     output reg [31:0] instrucao;
     // alterar confome a quantidade de linhas do arquivo
-    reg [31:0] instrucoes [0:14]; // Memória de instruções
+    reg [31:0] instrucoes [0:10]; // Memória de instruções
 
     // Lendo instruções
     // Especifique qual instrucoes.bin esta lendo
     initial begin
-        $readmemb("entrada/instrucoes3.bin", instrucoes); // Lendo instruções em formato binário
+        $readmemb("entrada/instrucoes4.bin", instrucoes); // Lendo instruções em formato binário
         instrucao <= instrucoes[PC];
     end
 
@@ -22,4 +22,5 @@ module lerinstrucao (instrucao, PC, clk, estado);
     end
 
 endmodule
+
 
