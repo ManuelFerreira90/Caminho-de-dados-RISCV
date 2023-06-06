@@ -31,8 +31,8 @@
 
                 Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
                 pode acontecer do número estar muito grande, isso acontece pois está em complemento de 
-                dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o resultado
-                correto.
+                dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o 
+                resultado correto.
 
                 
         Limitação: a memória so contém apenas 32bits e acessos para endereços maiores que 32 
