@@ -21,26 +21,27 @@
 
         assim é possível inicar tanto a memória e os registradores com valores Predefinidos
 
-        ALERTA: sempre deve se alterar no modulo lerinstrucao.v o tamanho do array instrucoes 
+     
+        ALERTAS:
+                1.Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
+                pode acontecer do número estar muito grande, isso acontece pois está em complemento de 
+                dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o 
+                resultado correto.
+        sempre deve se alterar no modulo lerinstrucao.v o tamanho do array instrucoes 
                 para a quantidade de instruções que deseja executar - 1.
                 Exemplo: addi x5, x5, 10
                          srl x8 , x8, x5
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
-
-                Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
-                pode acontecer do número estar muito grande, isso acontece pois está em complemento de 
-                dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o 
-                resultado correto.
-
-                
-        Limitação: a memória so contém apenas 32bits e acessos para endereços maiores que 32 
-                    o valor não sera computado, pois contamos com apenas 32 posições de memória
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
 </div>
-
+      
+        Limitação: a memória so contém apenas 32bits e acessos para endereços maiores que 32 
+                    o valor não sera computado, pois contamos com apenas 32 posições de memória
+        
+        Sobre:
         esse caminho de dados suportas as seguintes instruções:
             ADD, SUB, LW, SW, XOR, SLR, AND, OR, ADDI, BEQ, BNE
 
