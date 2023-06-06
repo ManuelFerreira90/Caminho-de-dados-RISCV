@@ -33,6 +33,12 @@ def lerArquivo(arquivo):
                 linha = linha.split(" ")
                 num = 1
                 mont.indentificar_funcao(linha, num, arquivo)
+        
+            linha = "00000000000000000000000000000000"        
+            with open("../entrada/assembler.bin", "a") as _arq:
+                _arq.write(linha)
+                _arq.close()
+
             arq.close()
 
     except FileNotFoundError:
