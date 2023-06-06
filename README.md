@@ -49,9 +49,8 @@
             somente as instruções BEQ, BNE e ADDI aceitam imediato negativo.
 
             também pode ser usado nosso montador assembly para converter assembly em binário,
-            mas esse monstador não aceita rótulo e também as instruções AND, OR, então nas função 
-            de branch forneça o imediato para onde o desvio será tomado.
-
+            mas esse monstador não aceita rótulo  então nas função de branch forneça o imediato
+            para onde o desvio será tomado, e também as instruções AND, OR, ADD.
 
         Execução das instruções:
         addi x7, x7, 5
