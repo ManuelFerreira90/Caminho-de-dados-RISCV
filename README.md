@@ -23,11 +23,12 @@
 
      
         ALERTAS:
-                1.Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
+                1. Ao incluir na instrução imediato negativo ao imprimir o resultado final em decimal,
                 pode acontecer do número estar muito grande, isso acontece pois está em complemento de 
                 dois, ao verificar no GTKWave o registrador ou memória como signed decimal verá o 
                 resultado correto.
-        sempre deve se alterar no modulo lerinstrucao.v o tamanho do array instrucoes 
+                
+                2. sempre deve se alterar no modulo lerinstrucao.v o tamanho do array instrucoes 
                 para a quantidade de instruções que deseja executar - 1.
                 Exemplo: addi x5, x5, 10
                          srl x8 , x8, x5
