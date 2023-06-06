@@ -29,8 +29,8 @@
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
                 
-        Limitação: a memória so contém apenas 32bits acessos para endereços maiores que 32bits 
-                    o valor não sera computado.
+        Limitação: a memória so contém apenas 32bits e acessos para endereços maiores que 32 
+                    o valor não sera computado, pois contamos com apenas 32 posições de memória
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
 </div>
@@ -41,8 +41,8 @@
             somente as instruções BEQ, BNE e ADDI aceitam imediato negativo.
 
             também pode ser usado nosso montador assembly para converter assembly em binário,
-            mas esse monstador não aceita rótulo, então nas função de branch forneça o
-            imediato para onde o desvio será tomado.
+            mas esse monstador não aceita rótulo e também as instruções AND, OR, então nas função 
+            de branch forneça o imediato para onde o desvio será tomado.
 
 
         Execução das instruções:
@@ -53,5 +53,23 @@
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/532afe02-6da2-4260-aee6-1041de11a088">
 </div>
+
+        Execução das instruções:
+        addi x2, x0, 7
+        sw x2, 4(x0)
+        lw x1, 4(x0)
+        add x2, x1, x0
+        add x1, x1, x2
+        add x1, x1, x2
+        sub x1, x1, x2
+        sub x1, x1, x2
+        beq x1, x2, SAIDA
+        add x1, x1, x1
+        sw x1, 0(x0)
+        SAIDA:
+        and x1, x1, x2
+        or x1, x1, x0
+        sw x1, 0(x0)
+
 
 
