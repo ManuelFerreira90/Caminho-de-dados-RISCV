@@ -7,7 +7,7 @@ module lerinstrucao (instrucao, pc, clk, estado, rst);
     reg [31:0] instrucoes [0:8]; // Memória de instruções
 
     // Atualizando instrução a cada ciclo de clock
-    always @(posedge clk, posedge rst) begin
+    always @(posedge clk) begin
         if(rst == 1'b1) begin
             instrucoes [0] <= 32'b00000000000000001010000000000011;
             instrucoes [1] <= 32'b00000000001000011010001000100011;

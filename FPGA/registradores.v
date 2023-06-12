@@ -24,7 +24,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
     assign readdata2R = bancoregistradores[rs2];
 
     // escrevendo no registrador
-    always @(posedge clk, posedge rst) begin
+    always @(posedge clk) begin
         if(rst == 1'b1) begin
             bancoregistradores[0] <= 32'b00000000000000000000000000000000;
             bancoregistradores[1] <= 32'b00000000000000000000000000000000;

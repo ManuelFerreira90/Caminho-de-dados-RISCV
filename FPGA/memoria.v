@@ -17,7 +17,7 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
     reg [31:0] memoria [0:31]; // memoria de 32 bits
 
     // atualizando a memoria a cada ciclo de clock
-    always @(posedge clk, posedge rst) begin
+    always @(posedge clk) begin
         if(rst == 1'b1) begin
             memoria[0] <= 32'b00000000000000000000000000000000;
             memoria[1] <= 32'b00000000000000000000000000000000;

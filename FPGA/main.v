@@ -1,4 +1,21 @@
-module main(clk, rst, display1, display2);
+`include "lerinstrucao.v"
+`include "decodificacao.v"
+`include "sinaisdecontrole.v"
+`include "somapc.v"
+`include "registradores.v"
+`include "alu.v"
+`include "memoria.v"
+`include "display.v"
+
+module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, 
+reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, 
+reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, 
+reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, 
+reg31, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, 
+mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, 
+mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, 
+mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, display1, display2, 
+display3, display4, display5, final);
 
     input clk, rst;
 
@@ -20,9 +37,9 @@ module main(clk, rst, display1, display2);
     wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
     wire [31:0] writedataR; //R para indicar que pertence ao banco de registradores
     //registradores de x0 a x31
-    wire [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
-    wire [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
-    wire [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
+    output [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
+    output [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
+    output [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX - para executar a instrução
     //resultado da alu
@@ -32,9 +49,9 @@ module main(clk, rst, display1, display2);
     //MEM - para ler/escrever na memoria
     wire [31:0] reddataM; //M para indicar que pertence a memoria
     //campos da memoria
-    wire [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
-    wire [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
-    wire [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
+    output [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
+    output [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
+    output [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
 
     //sinais de controle
     wire regiwrite;
@@ -47,8 +64,12 @@ module main(clk, rst, display1, display2);
     wire alusrc;
 
     //display
-	output [6:0] display1;
-	output [6:0] display2;
+	output [6:0] display1; //PC
+	output [6:0] display2; //PC
+    output [6:0] display3; //x1
+	output [6:0] display4;  //x1
+    output [6:0] display5; //final
+    output reg [3:0] final; //indicar final da execução
 
 
     //parametros do estado
@@ -106,57 +127,60 @@ module main(clk, rst, display1, display2);
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
     //modulo display
-	display display(.pc1(pc[3:0]), .pc2(pc[8:4]), .display1(display1), .display2(display2));
+	display display(.pc1(pc[3:0]), .pc2(pc[7:4]), .x5part1(reg5[3:0]), .x5part2(reg5[7:4]), .final(final), 
+    .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5));
 
     //maquina de estados
-    always @(posedge clk, posedge rst) begin
+    always @(posedge clk) begin
         // rst ativo para incialização das variáveis
         if(rst == 1'b1)begin
+            final <= 1'b0;
             estado <= IF;
         end 
         else begin
-                case(estado)
-            IF: begin
-                estado <= ID;
-            end
-            ID: begin
-                // se a instrução for 0, acaba a execução
-                if(instrucao != 0)begin
-                    estado <= EX;
+            case(estado)
+                IF: begin
+                    estado <= ID;
                 end
-                else begin
-                    estado <= FIM;
+                ID: begin
+                    // se a instrução for 0, acaba a execução
+                    if(instrucao != 0)begin
+                        estado <= EX;
+                    end
+                    else begin
+                        estado <= FIM;
+                    end
                 end
-            end
-            EX: begin
-                estado <= AUX1;
-            end
-            AUX1: begin
-                estado <= AUX2;
-            end
-            AUX2: begin
-                estado <= MEM;
-            end
-            MEM: begin
-                estado <= WB;
-            end
-            WB: begin
-                estado <= AUX3;
-            end
-            AUX3: begin
-                estado <= AUX4;
-            end
-            AUX4: begin
-                estado <= SUMPC;
-            end
-            SUMPC: begin
-                estado <= IF;
-            end
-            FIM : begin
-                if(rst == 1'b0) begin
+                EX: begin
+                    estado <= AUX1;
+                end
+                AUX1: begin
+                    estado <= AUX2;
+                end
+                AUX2: begin
+                    estado <= MEM;
+                end
+                MEM: begin
+                    estado <= WB;
+                end
+                WB: begin
+                    estado <= AUX3;
+                end
+                AUX3: begin
+                    estado <= AUX4;
+                end
+                AUX4: begin
+                    estado <= SUMPC;
+                end
+                SUMPC: begin
                     estado <= IF;
                 end
-            end
+                FIM : begin
+                    final <= 1'b1;
+                    // if(rst == 1'b0) begin
+                    //     estado <= IF;
+                    // end
+                end
             endcase
         end
     end

@@ -9,6 +9,8 @@ module caminho_tb;
     wire [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
     wire [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
     wire [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
+    wire [6:0] display1, display2, display3, display4, display5;
+    wire [3:0] final;
 
     main main (.clk(clk_tb), .rst(rst_tb), .reg0(reg0), .reg1(reg1), .reg2(reg2), 
     .reg3(reg3), .reg4(reg4), .reg5(reg5), .reg6(reg6), .reg7(reg7), .reg8(reg8), 
@@ -20,16 +22,18 @@ module caminho_tb;
     .mem3(mem3), .mem4(mem4), .mem5(mem5), .mem6(mem6), .mem7(mem7), .mem8(mem8), .mem9(mem9), .mem10(mem10), 
     .mem11(mem11),.mem12(mem12), .mem13(mem13), .mem14(mem14), .mem15(mem15), .mem16(mem16), .mem17(mem17), 
     .mem18(mem18), .mem19(mem19), .mem20(mem20), .mem21(mem21), .mem22(mem22), .mem23(mem23), .mem24(mem24), 
-    .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31));
+    .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
+    .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5), 
+    .final(final));
 
     initial begin
         $dumpfile("testbench.vcd");
         $dumpvars(0, caminho_tb);
         $display("\nResultados Finais");
-        rst_tb = 0;
-        #1000;
         rst_tb = 1;
-        #1
+        #5;
+        rst_tb = 0;
+        #10000;
         $display("--------------Memoria--------------");
         $display("memoria [0] =  %d", mem0);
         $display("memoria [1] =  %d", mem1);
