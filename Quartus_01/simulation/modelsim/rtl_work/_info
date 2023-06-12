@@ -1,0 +1,230 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/simulation/modelsim
+valu
+Z1 !s110 1685835663
+!i10b 1
+!s100 JYVHkA]@>_?Q6TUTSX?Nj0
+IG_lHn7XE?fl>h;jiQaQMz3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1685831372
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/alu.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/alu.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1685835663.000000
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/alu.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus}
+Z7 tCvgOpt 0
+vcaminho_tb
+Z8 !s110 1685835664
+!i10b 1
+!s100 IB1l]Md@UbI8B9X293;al3
+IK@__IbGzDWX<9YXe6CPCC1
+R2
+R0
+w1685833396
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/caminho_tb.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/caminho_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+Z9 !s108 1685835664.000000
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/caminho_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/caminho_tb.v|
+!i113 1
+R5
+R6
+R7
+vclock
+R1
+!i10b 1
+!s100 8egHX2]S6O2?6RZVWndM12
+ITgSi=6f2MU;0QLcQ[W<]E0
+R2
+R0
+w1685831397
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/clock.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/clock.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/clock.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/clock.v|
+!i113 1
+R5
+R6
+R7
+vdecodificacao
+R1
+!i10b 1
+!s100 57zTiW1z2:BZ@j7ne];Xa3
+IL]f>g_4jW?>V8il5_;fOl1
+R2
+R0
+w1685831416
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/decodificacao.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/decodificacao.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/decodificacao.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/decodificacao.v|
+!i113 1
+R5
+R6
+R7
+vlerinstrucao
+R1
+!i10b 1
+!s100 ?dHB=ESCN0VOUENTdU[JY2
+Iad?BUNN4dQCV3WfZLV=@C2
+R2
+R0
+w1685832411
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/lerinstrucao.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/lerinstrucao.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/lerinstrucao.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/lerinstrucao.v|
+!i113 1
+R5
+R6
+R7
+vmain
+R1
+!i10b 1
+!s100 eA>@@OG9[^7z8n]iJ=eZf3
+IFJYbdd]L[CaP9KB@Y]Sgh2
+R2
+R0
+w1685832734
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/main.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/main.v
+L0 14
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/main.v|
+!i113 1
+R5
+R6
+R7
+vmemoria
+R8
+!i10b 1
+!s100 ZZ:49He6PEGnPhfVTB5lP3
+IzjCeb`n:ePzF5zWG^oFkM2
+R2
+R0
+w1685832405
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/memoria.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/memoria.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/memoria.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/memoria.v|
+!i113 1
+R5
+R6
+R7
+vregistradores
+R8
+!i10b 1
+!s100 @J[XR[N2]_fhIOJW3_eEm0
+I]K<bI_hBY`mfK;fBMoJW^2
+R2
+R0
+w1685832404
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/registradores.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/registradores.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/registradores.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/registradores.v|
+!i113 1
+R5
+R6
+R7
+vsinaisdecontrole
+R1
+!i10b 1
+!s100 Wi^iWmHQcGLEL1W:4Z9NQ1
+I?<A^9hiRGj2S?aNHa464V2
+R2
+R0
+w1685832735
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/sinaisdecontrole.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/sinaisdecontrole.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/sinaisdecontrole.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/sinaisdecontrole.v|
+!i113 1
+R5
+R6
+R7
+vsomapc
+R1
+!i10b 1
+!s100 nW1oRja1^=B6ad=zHb@HX0
+I1;;C<]c6b@f<Y^6KD4ePe3
+R2
+R0
+w1685831539
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/somapc.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/somapc.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/somapc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus/somapc.v|
+!i113 1
+R5
+R6
+R7

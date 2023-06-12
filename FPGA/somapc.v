@@ -7,7 +7,7 @@ module somapc (pc, clk, pcsrc, immediate, estado, negativo, rst);
   output reg [31:0] pc; // posição da próxima instrução
 
   // incrementa o PC
-  always @(posedge clk) begin
+  always @(posedge clk, posedge rst) begin
     if(rst == 1'b1) begin
       pc <= 1'b0; // proxima instrução
     end

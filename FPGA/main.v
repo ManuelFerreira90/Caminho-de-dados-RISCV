@@ -67,6 +67,10 @@ module main(clk, rst, display1, display2);
 
     // //maquina de estados
     reg [3:0] estado;
+	 
+	 initial begin
+		estado <= IF;
+	 end
 
     //calcular o endereço
     somapc somapc(.pc(pc), .clk(clk), .pcsrc(pcsrc), .immediate(immediate), .estado(estado), 
@@ -102,7 +106,7 @@ module main(clk, rst, display1, display2);
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
     //modulo display
-	display display(.pc1(instrucao[3:0]), .pc2(instrucao[8:4]), .display1(display1), .display2(display2));
+	display display(.pc1(pc[3:0]), .pc2(pc[8:4]), .display1(display1), .display2(display2));
 
     //maquina de estados
     always @(posedge clk, posedge rst) begin

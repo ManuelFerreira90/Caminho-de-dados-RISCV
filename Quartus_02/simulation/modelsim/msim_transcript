@@ -1,0 +1,120 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+# do Caminho_de_dados_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:41 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/decodificacao.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/decodificacao.v 
+# -- Compiling module decodificacao
+# 
+# Top level modules:
+# 	decodificacao
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/sinaisdecontrole.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/sinaisdecontrole.v 
+# -- Compiling module sinaisdecontrole
+# 
+# Top level modules:
+# 	sinaisdecontrole
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/somapc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/somapc.v 
+# -- Compiling module somapc
+# 
+# Top level modules:
+# 	somapc
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/main.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/main.v 
+# -- Compiling module main
+# 
+# Top level modules:
+# 	main
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/lerinstrucao.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/lerinstrucao.v 
+# -- Compiling module lerinstrucao
+# 
+# Top level modules:
+# 	lerinstrucao
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/memoria.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/memoria.v 
+# -- Compiling module memoria
+# 
+# Top level modules:
+# 	memoria
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/Quartus_02 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/registradores.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:18:42 on Jun 12,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/registradores.v 
+# -- Compiling module registradores
+# 
+# Top level modules:
+# 	registradores
+# End time: 14:18:42 on Jun 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.main
+# vsim work.main 
+# Start time: 14:18:53 on Jun 12,2023
+# Loading work.main
+# Loading work.somapc
+# Loading work.lerinstrucao
+# Loading work.decodificacao
+# Loading work.sinaisdecontrole
+# Loading work.registradores
+# Loading work.alu
+# Loading work.memoria
+add wave -position end sim:/main/*
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/main/rst 1 0
+run
+# ** Warning: (vsim-7) Failed to open readmem file "instrucoes1.bin" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/lerinstrucao.v(12)
+#    Time: 0 ps  Iteration: 0  Instance: /main/lerinstrucao
+# ** Warning: (vsim-7) Failed to open readmem file "registradores.bin" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/registradores.v(20)
+#    Time: 0 ps  Iteration: 0  Instance: /main/registradores
+# ** Warning: (vsim-7) Failed to open readmem file "memoria.bin" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/Quartus_02/memoria.v(18)
+#    Time: 0 ps  Iteration: 0  Instance: /main/memoria
+run
+# End time: 14:22:03 on Jun 12,2023, Elapsed time: 0:03:10
+# Errors: 0, Warnings: 3
