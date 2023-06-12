@@ -1,12 +1,3 @@
-`include "lerinstrucao.v"
-`include "decodificacao.v"
-`include "sinaisdecontrole.v"
-`include "somapc.v"
-`include "registradores.v"
-`include "alu.v"
-`include "memoria.v"
-`include "display.v"
-
 module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, 
 reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, 
 reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, 

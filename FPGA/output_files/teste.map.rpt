@@ -1,6 +1,6 @@
 Analysis & Elaboration report for teste
-Mon Jun 12 14:34:15 2023
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Mon Jun 12 17:58:20 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -9,49 +9,52 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |main
+  5. Analysis & Elaboration Settings
+  6. Port Connectivity Checks: "alu:alu"
+  7. Port Connectivity Checks: "decodificacao:decodificacao"
+  8. Analysis & Elaboration Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Mon Jun 12 14:34:15 2023           ;
-; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name                      ; teste                                       ;
-; Top-level Entity Name              ; main                                        ;
-; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                      ;
++------------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Mon Jun 12 17:58:20 2023          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; teste                                          ;
+; Top-level Entity Name              ; main                                           ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------+
@@ -59,8 +62,8 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -70,90 +73,128 @@ agreement for further details.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |main ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; IF             ; 0000  ; Unsigned Binary                             ;
+; ID             ; 0001  ; Unsigned Binary                             ;
+; EX             ; 0010  ; Unsigned Binary                             ;
+; AUX1           ; 0101  ; Unsigned Binary                             ;
+; AUX2           ; 1111  ; Unsigned Binary                             ;
+; MEM            ; 0011  ; Unsigned Binary                             ;
+; WB             ; 0100  ; Unsigned Binary                             ;
+; AUX3           ; 0110  ; Unsigned Binary                             ;
+; AUX4           ; 0111  ; Unsigned Binary                             ;
+; SUMPC          ; 1000  ; Unsigned Binary                             ;
+; FIM            ; 1001  ; Unsigned Binary                             ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                            ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; main               ; teste              ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; main               ; teste              ;
-; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
+; Port Connectivity Checks: "alu:alu"                                                                                  ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; aluresult1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decodificacao:decodificacao"                                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; opcode ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------+
@@ -161,70 +202,46 @@ agreement for further details.
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 12 14:34:01 2023
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Mon Jun 12 17:58:13 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off teste -c teste --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Warning (10463): Verilog HDL Declaration warning at display.v(6): "final" is SystemVerilog-2005 keyword File: C:/Users/manub/Desktop/FPGA/FPGA/display.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file display.v
-    Info (12023): Found entity 1: display File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/display.v Line: 1
+    Info (12023): Found entity 1: display File: C:/Users/manub/Desktop/FPGA/FPGA/display.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at main.v(63): "final" is SystemVerilog-2005 keyword File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 63
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
-    Info (12023): Found entity 1: main File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/main.v Line: 1
+    Info (12023): Found entity 1: main File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: alu File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/alu.v Line: 1
+    Info (12023): Found entity 1: alu File: C:/Users/manub/Desktop/FPGA/FPGA/alu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decodificacao.v
-    Info (12023): Found entity 1: decodificacao File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/decodificacao.v Line: 1
+    Info (12023): Found entity 1: decodificacao File: C:/Users/manub/Desktop/FPGA/FPGA/decodificacao.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lerinstrucao.v
-    Info (12023): Found entity 1: lerinstrucao File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/lerinstrucao.v Line: 1
+    Info (12023): Found entity 1: lerinstrucao File: C:/Users/manub/Desktop/FPGA/FPGA/lerinstrucao.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memoria.v
-    Info (12023): Found entity 1: memoria File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/memoria.v Line: 1
+    Info (12023): Found entity 1: memoria File: C:/Users/manub/Desktop/FPGA/FPGA/memoria.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file registradores.v
-    Info (12023): Found entity 1: registradores File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/registradores.v Line: 1
+    Info (12023): Found entity 1: registradores File: C:/Users/manub/Desktop/FPGA/FPGA/registradores.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sinaisdecontrole.v
-    Info (12023): Found entity 1: sinaisdecontrole File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/sinaisdecontrole.v Line: 1
+    Info (12023): Found entity 1: sinaisdecontrole File: C:/Users/manub/Desktop/FPGA/FPGA/sinaisdecontrole.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file somapc.v
-    Info (12023): Found entity 1: somapc File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 1
+    Info (12023): Found entity 1: somapc File: C:/Users/manub/Desktop/FPGA/FPGA/somapc.v Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "somapc" for hierarchy "somapc:somapc" File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/main.v Line: 77
-Error (10200): Verilog HDL Conditional Statement error at somapc.v(14): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 14
-Warning (10240): Verilog HDL Always Construct warning at somapc.v(10): inferring latch(es) for variable "pc", which holds its previous value in one or more paths through the always construct File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[0]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[1]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[2]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[3]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[4]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[5]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[6]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[7]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[8]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[9]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[10]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[11]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[12]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[13]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[14]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[15]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[16]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[17]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[18]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[19]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[20]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[21]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[22]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[23]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[24]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[25]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[26]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[27]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[28]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[29]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[30]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Info (10041): Inferred latch for "pc[31]" at somapc.v(10) File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/somapc.v Line: 10
-Error (12152): Can't elaborate user hierarchy "somapc:somapc" File: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA/main.v Line: 77
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 4710 megabytes
-    Error: Processing ended: Mon Jun 12 14:34:15 2023
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:20
+Info (12128): Elaborating entity "somapc" for hierarchy "somapc:somapc" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 89
+Info (12128): Elaborating entity "lerinstrucao" for hierarchy "lerinstrucao:lerinstrucao" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 91
+Info (12128): Elaborating entity "decodificacao" for hierarchy "decodificacao:decodificacao" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 95
+Warning (10230): Verilog HDL assignment warning at decodificacao.v(60): truncated value with size 32 to match size of target (12) File: C:/Users/manub/Desktop/FPGA/FPGA/decodificacao.v Line: 60
+Warning (10034): Output port "opcode" at decodificacao.v(5) has no driver File: C:/Users/manub/Desktop/FPGA/FPGA/decodificacao.v Line: 5
+Info (12128): Elaborating entity "sinaisdecontrole" for hierarchy "sinaisdecontrole:sinaisdecontrole" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 99
+Info (12128): Elaborating entity "registradores" for hierarchy "registradores:registradores" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 107
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 111
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:memoria" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 119
+Info (12128): Elaborating entity "display" for hierarchy "display:display" File: C:/Users/manub/Desktop/FPGA/FPGA/main.v Line: 122
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4740 megabytes
+    Info: Processing ended: Mon Jun 12 17:58:20 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:08
 
 
