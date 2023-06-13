@@ -1,14 +1,14 @@
 module display (pc1, pc2, x5part1, x5part2, final, display1, display2, display3, display4, display5);
 	input [3:0] pc1;
 	input [3:0] pc2;
-    input [3:0] x5part1;
-    input [3:0] x5part2;
-    input [3:0] final;
+   input [3:0] x5part1;
+   input [3:0] x5part2;
+   input [3:0] final;
 	output reg [6:0] display1;
 	output reg [6:0] display2;
-    output reg [6:0] display3;
-    output reg [6:0] display4;
-    output reg [6:0] display5;
+   output reg [6:0] display3;
+   output reg [6:0] display4;
+   output reg [6:0] display5;
 	
 	always @* begin
 		case (pc1)

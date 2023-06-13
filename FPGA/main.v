@@ -1,12 +1,4 @@
-module main(clk, rst, reg0, reg1, reg2, reg3, reg4, reg5, 
-reg6, reg7, reg8, reg9, reg10, reg11, reg12, reg13, reg14, 
-reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, 
-reg23, reg24, reg25, reg26, reg27, reg28, reg29, reg30, 
-reg31, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, 
-mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15, 
-mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23, 
-mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31, display1, display2, 
-display3, display4, display5, final);
+module main(clk, rst,display1, display2, display3, display4, display5, final);
 
     input clk, rst;
 
@@ -28,9 +20,9 @@ display3, display4, display5, final);
     wire [31:0] readdata2R; //R para indicar que pertence ao banco de registradores
     wire [31:0] writedataR; //R para indicar que pertence ao banco de registradores
     //registradores de x0 a x31
-    output [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
-    output [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
-    output [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
+    wire [31:0] reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8, reg9, reg10, reg11;
+    wire [31:0] reg12, reg13, reg14, reg15, reg16, reg17, reg18, reg19, reg20, reg21, reg22, reg23; 
+    wire [31:0] reg24, reg25, reg26, reg27, reg28, reg29, reg30, reg31;
 
     //EX - para executar a instrução
     //resultado da alu
@@ -40,9 +32,9 @@ display3, display4, display5, final);
     //MEM - para ler/escrever na memoria
     wire [31:0] reddataM; //M para indicar que pertence a memoria
     //campos da memoria
-    output [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
-    output [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
-    output [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
+    wire [31:0] mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7, mem8, mem9, mem10, mem11;
+    wire [31:0] mem12, mem13, mem14, mem15, mem16, mem17, mem18, mem19, mem20, mem21, mem22, mem23; 
+    wire [31:0] mem24, mem25, mem26, mem27, mem28, mem29, mem30, mem31;
 
     //sinais de controle
     wire regiwrite;
@@ -57,10 +49,10 @@ display3, display4, display5, final);
     //display
 	output [6:0] display1; //PC
 	output [6:0] display2; //PC
-    output [6:0] display3; //x1
+   output [6:0] display3; //x1
 	output [6:0] display4;  //x1
-    output [6:0] display5; //final
-    output reg [3:0] final; //indicar final da execução
+   output [6:0] display5; //final
+   output reg [3:0] final; //indicar final da execução
 
 
     //parametros do estado
