@@ -110,7 +110,7 @@ module main(clk, rst,display1, display2, display3, display4, display5);
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
     //modulo display
-	display display(.pc1(pc[3:0]), .pc2(pc[7:4]), .x5part1(reg5[3:0]), .x5part2(reg5[7:4]), .final(final), 
+	display display(.clk(clk), .pc1(pc[3:0]), .pc2(pc[7:4]), .x5part1(reg5[3:0]), .x5part2(reg5[7:4]), .final(final), 
     .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5));
 
     //maquina de estados
