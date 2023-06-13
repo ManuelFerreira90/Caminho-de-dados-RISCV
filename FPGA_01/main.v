@@ -52,6 +52,10 @@ module main(clk, rst,display1, display2, display3, display4, display5);
    output [6:0] display3; //x1
 	output [6:0] display4;  //x1
    output [6:0] display5; //final
+	wire [3:0] dezenapc; //casa das dezenas do algarismo do pc
+	wire [3:0] unidadepc; //casa das unidades do algarismo do pc
+	wire [3:0] dezenareg; //casa das dezenas do algarismo do reg
+	wire [3:0] unidadereg; //casa das unidades do algarismo do reg
    reg [3:0] final; //indicar final da execução
 
 
@@ -72,9 +76,6 @@ module main(clk, rst,display1, display2, display3, display4, display5);
     // //maquina de estados
     reg [3:0] estado;
 	 
-	 initial begin
-		estado <= IF;
-	 end
 
     //calcular o endereço
     somapc somapc(.pc(pc), .clk(clk), .pcsrc(pcsrc), .immediate(immediate), .estado(estado), 
@@ -109,8 +110,11 @@ module main(clk, rst,display1, display2, display3, display4, display5);
     .mem18(mem18), .mem19(mem19), .mem20(mem20), .mem21(mem21), .mem22(mem22), .mem23(mem23), .mem24(mem24), 
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
+	 //modulo de conversão para uso de dois displays
+	 conversaodisplay conversaodisplay(.dezenapc(dezenapc), .unidadepc(unidadepc), .dezenareg(dezenareg), 
+	 .unidadereg(unidadereg), .pc(pc), .register(reg5));
     //modulo display
-	display display(.clk(clk), .pc1(pc[3:0]), .pc2(pc[7:4]), .x5part1(reg5[3:0]), .x5part2(reg5[7:4]), .final(final), 
+	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .x5part1(unidadereg), .x5part2(dezenareg), .final(final), 
     .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5));
 
     //maquina de estados
