@@ -14,4 +14,5 @@ vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ P
 vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/registradores.v}
 vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/somapc.v}
 vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/sinaisdecontrole.v}
+vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v}
 

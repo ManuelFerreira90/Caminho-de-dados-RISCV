@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/simulation/modelsim
 valu
-Z1 !s110 1686686071
+Z1 !s110 1686764065
 !i10b 1
 !s100 6]YAM>mg:8dU;H7CkNe131
 Ig2l>1D1j39A3Jh7CPdcmM1
@@ -23,15 +23,37 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1686686071.000000
+Z4 !s108 1686764065.000000
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/alu.v|
 !i113 1
 Z5 o-vlog01compat -work work
 Z6 !s92 -vlog01compat -work work {+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01}
 Z7 tCvgOpt 0
+vconversaodisplay
+Z8 !s110 1686764066
+!i10b 1
+!s100 0]kndYS6gh:QP8Az>7Mfi2
+INUo<c4UgOg:aR[=;9@QNY3
+R2
+R0
+w1686760308
+8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v
+FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z9 !s108 1686764066.000000
+!s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v|
+!i113 1
+R5
+R6
+R7
 vdecodificacao
-R1
+R8
 !i10b 1
 !s100 iaIYN`YHLZA:=8SbM9O4M0
 IE[6b0o4<B:1U[]Bk6NT0`0
@@ -45,7 +67,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/decodificacao.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/decodificacao.v|
 !i113 1
@@ -53,13 +75,13 @@ R5
 R6
 R7
 vdisplay
-R1
+R8
 !i10b 1
-!s100 Y_fUk6GJ4KfHSC5hnD`l23
-I86J]e;ClI43WcP`Fd;LSb3
+!s100 j_KhcCj1o[>:9GU83WO:S3
+IZmb@N:c3aGZZD_mYJC?iG2
 R2
 R0
-w1686678843
+w1686763386
 8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v
 FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v
 L0 1
@@ -67,7 +89,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v|
 !i113 1
@@ -75,13 +97,13 @@ R5
 R6
 R7
 vlerinstrucao
-R1
+R8
 !i10b 1
-!s100 ZG>n=NhjTWFQ:0BbL16l`0
-IiTVBaH1Ci:V?=_]_9cYFI1
+!s100 9mjngBeHm8AFbQ;8]VL[30
+IL=HMA0i@a9g;2oJ>U^_Sd0
 R2
 R0
-w1686682159
+w1686762713
 8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v
 FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v
 L0 1
@@ -89,7 +111,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v|
 !i113 1
@@ -99,11 +121,11 @@ R7
 vmain
 R1
 !i10b 1
-!s100 8E_zF__hP>aRDaKF9OeA@2
-I@T3kSb<K]>16E>z73V>8^2
+!s100 9HJUm><9YZJ6QmMT]XnVA2
+I]5`ia;?`QmfP>9ld]lY6E3
 R2
 R0
-w1686680253
+w1686762708
 8C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/main.v
 FC:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/main.v
 L0 1
@@ -119,7 +141,7 @@ R5
 R6
 R7
 vmemoria
-R1
+R8
 !i10b 1
 !s100 kL<jM>SWFO5`H1i;YNI4=3
 II^bA`T5OMm@Bcm;AV7@Sj0
@@ -133,7 +155,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/memoria.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/memoria.v|
 !i113 1
@@ -141,7 +163,7 @@ R5
 R6
 R7
 vregistradores
-R1
+R8
 !i10b 1
 !s100 n94VT[8IP3HdbM^oKE1lj2
 IO2jjBZomloEe?_>hC@K:I1
@@ -155,7 +177,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/registradores.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/registradores.v|
 !i113 1
@@ -163,7 +185,7 @@ R5
 R6
 R7
 vsinaisdecontrole
-Z8 !s110 1686686072
+R8
 !i10b 1
 !s100 U:K[S9@^f0J2F9VCDIm;`3
 IET>D>jJ2GBjjlkTHJi_Lc0
@@ -177,7 +199,7 @@ R3
 r1
 !s85 0
 31
-!s108 1686686072.000000
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/sinaisdecontrole.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/sinaisdecontrole.v|
 !i113 1
@@ -199,7 +221,7 @@ R3
 r1
 !s85 0
 31
-R4
+R9
 !s107 C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/somapc.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01|C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/somapc.v|
 !i113 1

@@ -12,112 +12,102 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/main.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:25 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/main.v 
 # -- Compiling module main
 # 
 # Top level modules:
 # 	main
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:25 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/alu.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:25 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:25 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/display.v 
 # -- Compiling module display
 # 
 # Top level modules:
 # 	display
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/decodificacao.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/decodificacao.v 
 # -- Compiling module decodificacao
 # 
 # Top level modules:
 # 	decodificacao
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/lerinstrucao.v 
 # -- Compiling module lerinstrucao
 # 
 # Top level modules:
 # 	lerinstrucao
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/memoria.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/memoria.v 
 # -- Compiling module memoria
 # 
 # Top level modules:
 # 	memoria
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/registradores.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/registradores.v 
 # -- Compiling module registradores
 # 
 # Top level modules:
 # 	registradores
-# End time: 16:54:31 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/somapc.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:31 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/somapc.v 
 # -- Compiling module somapc
 # 
 # Top level modules:
 # 	somapc
-# End time: 16:54:32 on Jun 13,2023, Elapsed time: 0:00:01
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/sinaisdecontrole.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:54:32 on Jun 13,2023
+# Start time: 14:34:26 on Jun 14,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/sinaisdecontrole.v 
 # -- Compiling module sinaisdecontrole
 # 
 # Top level modules:
 # 	sinaisdecontrole
-# End time: 16:54:32 on Jun 13,2023, Elapsed time: 0:00:00
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/itall/OneDrive/Documentos/Meus\ Projetos/Caminho-de-dados-RISCV/FPGA_01 {C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:34:26 on Jun 14,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01" C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/conversaodisplay.v 
+# -- Compiling module conversaodisplay
+# 
+# Top level modules:
+# 	conversaodisplay
+# End time: 14:34:26 on Jun 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.main
-# vsim work.main 
-# Start time: 16:54:40 on Jun 13,2023
-# Loading work.main
-# Loading work.somapc
-# Loading work.lerinstrucao
-# Loading work.decodificacao
-# Loading work.sinaisdecontrole
-# Loading work.registradores
-# Loading work.alu
-# Loading work.memoria
-# Loading work.display
-add wave -position end sim:/main/*
-force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/main/rst 1 0
-run
-force -freeze sim:/main/rst 0 0
-run
-# End time: 17:20:15 on Jun 13,2023, Elapsed time: 0:25:35
-# Errors: 0, Warnings: 0

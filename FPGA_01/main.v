@@ -1,4 +1,4 @@
-module main(clk, rst,display1, display2, display3, display4, display5);
+module main(clk, rst, display1, display2, display3, display4, display5);
 
     input clk, rst;
 
@@ -115,7 +115,8 @@ module main(clk, rst,display1, display2, display3, display4, display5);
 	 .unidadereg(unidadereg), .pc(pc), .register(reg5));
     //modulo display
 	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .x5part1(unidadereg), .x5part2(dezenareg), .final(final), 
-    .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5));
+    .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5),
+	 .estado(estado));
 
     //maquina de estados
     always @(posedge clk) begin
