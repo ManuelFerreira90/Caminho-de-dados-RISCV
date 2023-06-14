@@ -1,6 +1,6 @@
 module conversaodisplay (dezenapc, unidadepc, dezenareg, unidadereg, pc, register);
-	input [32:0] pc;
-	input [32:0] register;
+	input [31:0] pc;
+	input [31:0] register;
 	output [3:0] dezenapc;
 	output [3:0] unidadepc;
 	output [3:0] dezenareg;

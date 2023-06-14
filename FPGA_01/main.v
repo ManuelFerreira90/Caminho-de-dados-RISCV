@@ -69,6 +69,7 @@ module main(clk, rst, display1, display2, display3, display4, display5);
               WB = 4'b0100, //escrita
               AUX3 = 4'b0110, //auxiliar para atraso
               AUX4 = 4'b0111, //auxiliar para atraso
+              AUX5 = 4'b1100, //auxiliar para atualização do display
               SUMPC = 4'b1000, //soma pc
               FIM = 4'b1001; //finish
 
@@ -135,7 +136,7 @@ module main(clk, rst, display1, display2, display3, display4, display5);
                         estado <= EX;
                     end
                     else begin
-                        estado <= FIM;
+                        estado <= AUX5;
                     end
                 end
                 EX: begin
@@ -157,19 +158,23 @@ module main(clk, rst, display1, display2, display3, display4, display5);
                     estado <= AUX4;
                 end
                 AUX4: begin
-                    estado <= SUMPC;
+                    estado <= AUX5;
+                end
+                AUX5: begin
+                    if(instrucao == 0)begin
+                        estado <= FIM;
+                    end
+                    else begin
+                        estado <= SUMPC;
+                    end
                 end
                 SUMPC: begin
                     estado <= IF;
                 end
                 FIM : begin
                     final <= 1'b1;
-                    // if(rst == 1'b0) begin
-                    //     estado <= IF;
-                    // end
                 end
             endcase
     end
-
 
 endmodule
