@@ -131,7 +131,7 @@ module main(clk, rst, display1, display2, display3, display4, display5);
                     estado <= ID;
                 end
                 ID: begin
-                    // se a instrução for 0, acaba a execução
+                    // se a instrução for 0, vai para AUX5 atualiza o display e finaliza
                     if(instrucao != 0)begin
                         estado <= EX;
                     end
