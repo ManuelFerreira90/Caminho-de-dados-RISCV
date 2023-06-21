@@ -113,16 +113,16 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     .estado(estado), .writedataR(writedataR), .rst(rst));
 	 //modulo de conversão para uso de dois displays
 	 conversaodisplay conversaodisplay(.dezenapc(dezenapc), .unidadepc(unidadepc), .dezenareg(dezenareg), 
-	 .unidadereg(unidadereg), .pc(pc), .register(reg5));
+	 .unidadereg(unidadereg), .pc(pc), .register(reg1));
     //modulo display
-	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .x5part1(unidadereg), .x5part2(dezenareg), .final(final), 
+	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .regpart1(unidadereg), .regpart2(dezenareg), .final(final), 
     .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5),
 	 .estado(estado));
 
     //maquina de estados
     always @(posedge clk) begin
         // rst ativo para incialização das variáveis
-        if(rst == 1'b1)begin
+        if(rst == 1'b0)begin
             final <= 1'b0;
             estado <= IF;
         end 

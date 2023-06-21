@@ -8,7 +8,7 @@ module somapc (pc, clk, pcsrc, immediate, estado, negativo, rst);
 
   // incrementa o PC
   always @(posedge clk) begin
-    if(rst == 1'b1) begin
+    if(rst == 1'b0) begin
       pc <= 1'b0; // proxima instrução
     end
     if(estado == 4'b1000) begin

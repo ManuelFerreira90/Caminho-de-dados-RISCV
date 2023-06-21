@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Jun 15 20:23:05 2023
+Fitter Status : Successful - Wed Jun 21 14:28:09 2023
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : Caminho_FPGA
 Top-level Entity Name : main
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 5,046 / 114,480 ( 4 % )
-    Total combinational functions : 4,981 / 114,480 ( 4 % )
-    Dedicated logic registers : 1,757 / 114,480 ( 2 % )
-Total registers : 1757
+Total logic elements : 4,294 / 114,480 ( 4 % )
+    Total combinational functions : 4,237 / 114,480 ( 4 % )
+    Dedicated logic registers : 1,492 / 114,480 ( 1 % )
+Total registers : 1492
 Total pins : 37 / 529 ( 7 % )
 Total virtual pins : 0
 Total memory bits : 0 / 3,981,312 ( 0 % )

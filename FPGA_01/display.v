@@ -1,8 +1,8 @@
-module display (pc1, pc2, x5part1, x5part2, final, display1, display2, display3, display4, display5, clk, estado);
+module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display3, display4, display5, clk, estado);
    input [3:0] pc1;
    input [3:0] pc2;
-   input [3:0] x5part1;
-   input [3:0] x5part2;
+   input [3:0] regpart1;
+   input [3:0] regpart2;
    input [3:0] final;
    input clk;
    input [3:0] estado;
@@ -41,7 +41,7 @@ module display (pc1, pc2, x5part1, x5part2, final, display1, display2, display3,
 						4'b1001: display2 <= 7'b0010000; 
 						default: display2 <= 7'b1111111; 
 			endcase
-					case (x5part1)
+					case (regpart1)
 						4'b0000: display3 <= 7'b1000000;
 						4'b0001: display3 <= 7'b1111001; 
 						4'b0010: display3 <= 7'b0100100; 
@@ -55,7 +55,7 @@ module display (pc1, pc2, x5part1, x5part2, final, display1, display2, display3,
 						default: display3 <= 7'b1111111; 
 			endcase
 			
-			case (x5part2)
+			case (regpart2)
 						4'b0000: display4 <= 7'b1000000;
 						4'b0001: display4 <= 7'b1111001; 
 						4'b0010: display4 <= 7'b0100100; 
@@ -82,6 +82,9 @@ module display (pc1, pc2, x5part1, x5part2, final, display1, display2, display3,
 						4'b1001: display5 <= 7'b0010000; 
 						default: display5 <= 7'b1111111; 
 			endcase
+			/*
+			
+			*/
 	//	end
 	end
 
