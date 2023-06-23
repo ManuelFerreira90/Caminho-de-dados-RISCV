@@ -95,15 +95,18 @@
 </div>
         Seta 1:
             está localizado dois display de sete segmentos que irá algum registrador escolhido no código.
+
         Seta 2:
             está um display usado para sinalizar o final de todas as instruções, 0 para caminho de dados em execução, 1 para todas as instruções foram executadas.
+
         Seta 3:
             mostra os displays representando o program counter.
 
-        O program counter e o registrador escolhido para mostrar nos displays são mostrados corretamente valores 
-        de 0 a 99.
+        O program counter e o registrador escolhido para mostrar nos displays são mostrados 
+        corretamente valores de 0 a 99.
 
-        Na linhas 116 do arquivo main.v poderá ser escolhido o registrador a ser mostrado nos display
+        Na linhas 116 do arquivo main.v poderá ser escolhido o registrador a 
+        ser mostrado nos display.
         
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ab257b93-627e-4058-9581-2ab566931824">
