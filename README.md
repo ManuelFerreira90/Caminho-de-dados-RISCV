@@ -97,7 +97,8 @@
             está localizado dois display de sete segmentos que irá algum registrador escolhido no código.
 
         Seta 2:
-            está um display usado para sinalizar o final de todas as instruções, 0 para caminho de dados em execução, 1 para todas as instruções foram executadas.
+            está um display usado para sinalizar o final de todas as instruções, 
+            0 para caminho de dados em execução, 1 para todas as instruções foram executadas.
 
         Seta 3:
             mostra os displays representando o program counter.
