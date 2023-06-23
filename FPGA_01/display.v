@@ -13,7 +13,6 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
    output reg [6:0] display5;
 	
 	always @(posedge clk) begin
-		//if((estado == 4'b1100)) begin
 			case (pc1)
 						4'b0000: display1 <= 7'b1000000;
 						4'b0001: display1 <= 7'b1111001; 
@@ -82,10 +81,6 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
 						4'b1001: display5 <= 7'b0010000; 
 						default: display5 <= 7'b1111111; 
 			endcase
-			/*
-			
-			*/
-	//	end
 	end
 
 endmodule
