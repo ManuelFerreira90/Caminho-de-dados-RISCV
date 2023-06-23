@@ -18,6 +18,7 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
 
     // atualizando a memoria a cada ciclo de clock
     always @(posedge clk) begin
+        //rst ativo para incializar a memoria
         if(rst == 1'b0) begin
             memoria[0] <= 32'b00000000000000000000000000000000;
             memoria[1] <= 32'b00000000000000000000000000000000;
@@ -52,12 +53,13 @@ module memoria (clk, aluresult2, readdata2R, reddataM, memwrite, memread, immedi
             memoria[30] <= 32'b00000000000000000000000000000000;
             memoria[31] <= 32'b00000000000000000000000000000000;
         end
+        //estados onde a memoria é acessada
         if((estado == 4'b0011) || (estado == 4'b0110 ) || (estado == 4'b0111)) begin
             // mux para saber se vai ser escrito ou lido na memoria 
-            if(memwrite == 1'b1) begin
+            if(memwrite == 1'b1) begin //escrita
                 memoria[aluresult2] <= readdata2R;
             end
-            if(memread == 1'b1) begin
+            if(memread == 1'b1) begin //leitura
                 reddataM <= memoria[aluresult2];
             end
             // atualizando o valor que vai ser escrito no registrador

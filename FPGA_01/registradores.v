@@ -25,6 +25,7 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
 
     // escrevendo no registrador
     always @(posedge clk) begin
+        //rst ativo para inicializar os registradores
         if(rst == 1'b0) begin
             bancoregistradores[0] <= 32'b00000000000000000000000000000000;
             bancoregistradores[1] <= 32'b00000000000000000000000000000000;
@@ -67,12 +68,12 @@ module registradores (clk, rs1, rs2, rd, readdata1R, readdata2R, regiwrite, memt
                     // memtoreg mostra se o dado vem da memória ou da alu
                     case (memtoreg)
                         1'b1: begin
-                            if(rd != 0) begin
+                            if(rd != 0) begin //dado vindo da memória
                                 bancoregistradores[rd] <= reddataM;
                             end          
                         end
                         1'b0: begin
-                            if(rd != 0) begin
+                            if(rd != 0) begin //dado vindo da alu
                                 bancoregistradores[rd] <= writedataR;
                             end
                         end

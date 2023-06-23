@@ -15,11 +15,11 @@ module sinaisdecontrole (tipo, regiwrite, memwrite, memread, alucontrol, funct3,
 
     // gerando sinais de controle
     always @(posedge clk)begin
-        // estado para gerar valores de controle para a alu realizar determina operação
         /* 
         inicialmente os sinais de controle de escrita e leitura são iniciados como don't care 
         para não ocorrer a escrita no registrar antes do resultado da alu estiver pronto
         */
+        // estado para gerar valores de controle para a alu realizar determina operação
         if(estado == 4'b0010 ) begin
             case (tipo)
                 // sinais de controle para i

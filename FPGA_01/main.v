@@ -112,12 +112,13 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
 	 //modulo de conversão para uso de dois displays
+     //no campo .register deve ser colocado o registrador que se deseja mostrar no display
 	 conversaodisplay conversaodisplay(.dezenapc(dezenapc), .unidadepc(unidadepc), .dezenareg(dezenareg), 
 	 .unidadereg(unidadereg), .pc(pc), .register(reg1));
     //modulo display
-	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .regpart1(unidadereg), .regpart2(dezenareg), .final(final), 
-    .display1(display1), .display2(display2), .display3(display3), .display4(display4), .display5(display5),
-	 .estado(estado));
+	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .regpart1(unidadereg), .regpart2(dezenareg), 
+    .final(final), .display1(display1), .display2(display2), .display3(display3), .display4(display4), 
+    .display5(display5),.estado(estado));
 
     //maquina de estados
     always @(posedge clk) begin
@@ -127,52 +128,53 @@ module main(clk, rst, display1, display2, display3, display4, display5);
             estado <= IF;
         end 
             case(estado)
-                IF: begin
+                IF: begin //estado para leitura da instrução na memória de instruções
                     estado <= ID;
                 end
-                ID: begin
+                ID: begin //estado para decodificação da instrução
                     // se a instrução for 0, vai para AUX5 atualiza o display e finaliza
                     if(instrucao != 0)begin
-                        estado <= EX;
+                        estado <= EX; 
                     end
                     else begin
                         estado <= AUX5;
                     end
                 end
-                EX: begin
-                    estado <= AUX1;
+                EX: begin //estado para execução da ALU
+                    estado <= AUX1; 
                 end
-                AUX1: begin
-                    estado <= AUX2;
+                AUX1: begin //estado para gerar atraso de 1 ciclo
+                    estado <= AUX2; 
                 end
-                AUX2: begin
-                    estado <= MEM;
+                AUX2: begin //estado para gerar atraso de 1 ciclo
+                    estado <= MEM; 
                 end
-                MEM: begin
-                    estado <= WB;
+                MEM: begin //estado para leiura e escrita na memória
+                    estado <= WB; 
                 end
-                WB: begin
+                WB: begin //estado para escrever no banco registrador
                     estado <= AUX3;
                 end
-                AUX3: begin
+                AUX3: begin //estado para gerar atraso de 1 ciclo
                     estado <= AUX4;
                 end
-                AUX4: begin
+                AUX4: begin //estado para gerar atraso de 1 ciclo
                     estado <= AUX5;
                 end
-                AUX5: begin
+                AUX5: begin //estado para gerar atraso de 1 ciclo
                     if(instrucao == 0)begin
-                        estado <= FIM;
+                        estado <= FIM; //se a instrução for 0, vai para FIM
                     end
                     else begin
-                        estado <= SUMPC;
+                        estado <= SUMPC; //se a instrução for diferente de 0, vai para SUMPC, 
+                                        //onde o PC é incrementado
                     end
                 end
-                SUMPC: begin
-                    estado <= IF;
+                SUMPC: begin //estado para incrementar o PC
+                    estado <= IF; //vai para IF para buscar a próxima instrução
                 end
-                FIM : begin
-                    final <= 1'b1;
+                FIM : begin //estado final para parar a execução
+                    final <= 1'b1; //ativa o sinal final para indicar o fim da execução no display
                 end
             endcase
     end
