@@ -93,6 +93,7 @@
 <div align="center">
 <img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/2acee134-c46b-4fb9-be69-2c7e3a6e655c">
 </div>
+
         Seta 1:
             está localizado dois display de sete segmentos que irá algum registrador escolhido no código.
 
