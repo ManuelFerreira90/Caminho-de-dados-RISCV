@@ -95,7 +95,8 @@
 </div>
 
         Seta 1:
-            está localizado dois display de sete segmentos que irá algum registrador escolhido no código.
+            está localizado dois display de sete segmentos que irá algum registrador 
+            escolhido no código.
 
         Seta 2:
             está um display usado para sinalizar o final de todas as instruções, 
