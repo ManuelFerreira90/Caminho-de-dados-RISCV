@@ -47,16 +47,15 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     wire alusrc;
 
     //display
-	output [6:0] display1; //PC
-	output [6:0] display2; //PC
-   output [6:0] display3; //x1
-	output [6:0] display4;  //x1
-   output [6:0] display5; //final
-	wire [3:0] dezenapc; //casa das dezenas do algarismo do pc
-	wire [3:0] unidadepc; //casa das unidades do algarismo do pc
-	wire [3:0] dezenareg; //casa das dezenas do algarismo do reg
-	wire [3:0] unidadereg; //casa das unidades do algarismo do reg
-   reg [3:0] final; //indicar final da execução
+    //display 1 e 2 para mostrar os 8 bits menos significativos do pc
+	output [6:0] display1; 
+	output [6:0] display2;
+    //display 3 e 4 para mostrar os 8 bits menos significativos do pc
+    output [6:0] display3;
+	output [6:0] display4;
+    //display 5 para mostrar o estado da execução 0 para ainda em execução e 1 para finalizado
+    output [6:0] display5;
+    reg [3:0] final; //indicar final da execução
 
 
     //parametros do estado
@@ -81,16 +80,20 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     //calcular o endereço
     somapc somapc(.pc(pc), .clk(clk), .pcsrc(pcsrc), .immediate(immediate), .estado(estado), 
     .negativo(negativo), .rst(rst));
+
     //leitura da instrução da instruction memory
     lerinstrucao lerinstrucao(.instrucao(instrucao), .pc(pc), .clk(clk), .estado(estado), .rst(rst));
+
     //decodificação da instrução
     decodificacao decodificacao(.instrucao(instrucao), .opcode(opcode), .rd(rd), .rs1(rs1), .rs2(rs2), 
     .funct3(funct3), .funct7(funct7), .immediate(immediate), .tipo(tipo), .clk(clk), .estado(estado), 
     .negativo(negativo));
+
     //gerando os sinais de controle
     sinaisdecontrole sinaisdecontrole(.tipo(tipo), .regiwrite(regiwrite), .memwrite(memwrite), 
     .memread(memread), .alucontrol(alucontrol), .funct3(funct3), .clk(clk), .branch(branch), 
     .memtoreg(memtoreg), .alusrc(alusrc), .funct7(funct7), .estado(estado));
+
     //leitura e escrita dos registradores
     registradores registradores(.clk(clk), .rs1(rs1), .rs2(rs2), .rd(rd), .readdata1R(readdata1R), 
     .readdata2R(readdata2R), .regiwrite(regiwrite), .memtoreg(memtoreg), .writedataR(writedataR), 
@@ -99,10 +102,12 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     .reg13(reg13), .reg14(reg14), .reg15(reg15), .reg16(reg16), .reg17(reg17), .reg18(reg18), .reg19(reg19), 
     .reg20(reg20), .reg21(reg21), .reg22(reg22), .reg23(reg23), .reg24(reg24), .reg25(reg25), .reg26(reg26), 
     .reg27(reg27), .reg28(reg28), .reg29(reg29), .reg30(reg30), .reg31(reg31), .estado(estado), .rst(rst));
+
     //execução da alu
     alu alu(.clk(clk), .readdata1R(readdata1R), .readdata2R(readdata2R), .alusrc(alusrc), 
     .alucontrol(alucontrol), .immediate(immediate), .aluresult1(aluresult1), .aluresult2(aluresult2), 
     .pcsrc(pcsrc), .branch(branch), .estado(estado), .negativo(negativo));
+
     //leitura e escrita da memoria
     memoria memoria(.clk(clk), .aluresult2(aluresult2), .readdata2R(readdata2R), .reddataM(reddataM), 
     .memwrite(memwrite), .memread(memread), .immediate(immediate), .mem0(mem0), .mem1(mem1), .mem2(mem2), 
@@ -111,14 +116,11 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     .mem18(mem18), .mem19(mem19), .mem20(mem20), .mem21(mem21), .mem22(mem22), .mem23(mem23), .mem24(mem24), 
     .mem25(mem25), .mem26(mem26), .mem27(mem27), .mem28(mem28), .mem29(mem29), .mem30(mem30), .mem31(mem31), 
     .estado(estado), .writedataR(writedataR), .rst(rst));
-	 //modulo de conversão para uso de dois displays
-     //no campo .register deve ser colocado o registrador que se deseja mostrar no display
-	 conversaodisplay conversaodisplay(.dezenapc(dezenapc), .unidadepc(unidadepc), .dezenareg(dezenareg), 
-	 .unidadereg(unidadereg), .pc(pc), .register(reg1));
+
     //modulo display
-	display display(.clk(clk), .pc1(unidadepc), .pc2(dezenapc), .regpart1(unidadereg), .regpart2(dezenareg), 
-    .final(final), .display1(display1), .display2(display2), .display3(display3), .display4(display4), 
-    .display5(display5),.estado(estado));
+    //no campo .register deve ser colocado o registrador que se deseja mostrar no display
+	display display(.pc(pc), .register(reg1), .final(final), .display1(display1), .display2(display2), 
+    .display3(.display3), .display4(display4), .display5(display5), .clk(clk));
 
     //maquina de estados
     always @(posedge clk) begin

@@ -1,11 +1,7 @@
-module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display3, display4, display5, clk, estado);
-   input [3:0] pc1; //unidades do pc
-   input [3:0] pc2; //dezenas do pc
-   input [3:0] regpart1; //unidade do registrador
-   input [3:0] regpart2; //dezena do registrador
+module display (pc, register, final, display1, display2, display3, display4, display5, clk);
+   input [32:0] pc, register //variaveis que indicam o valor do pc e do registrador
    input [3:0] final; //variavel que indica o fim da execução
    input clk;
-   input [3:0] estado;
    output reg [6:0] display1;
    output reg [6:0] display2;
    output reg [6:0] display3;
@@ -15,7 +11,7 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
 	//displays em formato BCD
 	always @(posedge clk) begin
 			//campo das unidades do pc
-			case (pc1)
+			case (pc[3:0])
 						4'b0000: display1 <= 7'b1000000;
 						4'b0001: display1 <= 7'b1111001; 
 						4'b0010: display1 <= 7'b0100100; 
@@ -29,7 +25,7 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
 						default: display1 <= 7'b1111111; 
 			endcase
 			//campo das dezenas do pc
-			case (pc2)
+			case (pc[7:4])
 						4'b0000: display2 <= 7'b1000000;
 						4'b0001: display2 <= 7'b1111001; 
 						4'b0010: display2 <= 7'b0100100; 
@@ -43,7 +39,7 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
 						default: display2 <= 7'b1111111; 
 			endcase
 			//campo das unidades do registrador
-			case (regpart1)
+			case (register[3:0])
 						4'b0000: display3 <= 7'b1000000;
 						4'b0001: display3 <= 7'b1111001; 
 						4'b0010: display3 <= 7'b0100100; 
@@ -57,7 +53,7 @@ module display (pc1, pc2, regpart1, regpart2, final, display1, display2, display
 						default: display3 <= 7'b1111111; 
 			endcase
 			//campo das dezenas do registrador
-			case (regpart2)
+			case (register[7:4])
 						4'b0000: display4 <= 7'b1000000;
 						4'b0001: display4 <= 7'b1111001; 
 						4'b0010: display4 <= 7'b0100100; 
