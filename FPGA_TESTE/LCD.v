@@ -1,7 +1,7 @@
 module LCD(clk, LCD_data, LCD_en, LCD_rw, LCD_rs, LCD_blon);
     input clk;
     output reg LCD_en, LCD_rw, LCD_rs, LCD_blon;
-    output reg [7:0] LCD_data ; 
+    output reg [7:0] LCD_data; 
     reg [3:0] LCD_estado = 0;
 
     always @(posedge clk) begin

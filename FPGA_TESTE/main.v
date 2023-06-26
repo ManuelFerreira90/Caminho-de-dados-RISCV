@@ -1,4 +1,4 @@
-module main(clk, rst, display1, display2, display3, display4, display5);
+module main(clk, rst, display1, display2, display3, display4, display5, LCD_en, LCD_rw, LCD_rs, LCD_blon, LCD_data);
 
     input clk, rst;
 
@@ -78,7 +78,7 @@ module main(clk, rst, display1, display2, display3, display4, display5);
 	 
 	//LCD
 	output LCD_en, LCD_rw, LCD_rs, LCD_blon;
-   output [7:0] LCD_data;
+    output [7:0] LCD_data;
 	
 	
     //calcular o endereço
