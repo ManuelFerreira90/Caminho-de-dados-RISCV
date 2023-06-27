@@ -1,4 +1,4 @@
-module main(clk, rst, display1, display2, display3, display4, display5);
+module main(clk, rst, display1, display2, display3, display4, display5, LCD_en, LCD_rw, LCD_rs, LCD_blon, LCD_data);
 
     input clk, rst;
 
@@ -56,6 +56,10 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     //display 5 para mostrar o estado da execução 0 para ainda em execução e 1 para finalizado
     output [6:0] display5;
     reg [3:0] final; //indicar final da execução
+	 
+	 //LCD
+	output LCD_en, LCD_rw, LCD_rs, LCD_blon;
+   output [7:0] LCD_data;
 
 
     //parametros do estado
@@ -120,8 +124,11 @@ module main(clk, rst, display1, display2, display3, display4, display5);
     //modulo display
     //no campo .register deve ser colocado o registrador que se deseja mostrar no display
 	display display(.pc(pc), .register(reg1), .final(final), .display1(display1), .display2(display2), 
-    .display3(.display3), .display4(display4), .display5(display5), .clk(clk));
-
+    .display3(display3), .display4(display4), .display5(display5), .clk(clk));
+	 
+	//LCD
+	lcdd lcdd (.clk(clk), .LCD_data(LCD_data), .LCD_en(LCD_en), .LCD_rw(LCD_rw), .LCD_rs(LCD_rs), .LCD_blon(LCD_blon), 
+	.rst(rst));
     //maquina de estados
     always @(posedge clk) begin
         // rst ativo para incialização das variáveis

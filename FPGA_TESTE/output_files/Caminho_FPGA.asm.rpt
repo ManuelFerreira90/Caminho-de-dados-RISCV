@@ -1,5 +1,5 @@
 Assembler report for Caminho_FPGA
-Wed Jun 21 14:28:15 2023
+Tue Jun 27 13:46:20 2023
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/output_files/Caminho_FPGA.sof
+  5. Assembler Device Options: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_TESTE/output_files/Caminho_FPGA.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jun 21 14:28:15 2023 ;
+; Assembler Status      ; Successful - Tue Jun 27 13:46:20 2023 ;
 ; Revision Name         ; Caminho_FPGA                          ;
 ; Top-level Entity Name ; main                                  ;
 ; Family                ; Cyclone IV E                          ;
@@ -53,23 +53,23 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                     ;
-+---------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                     ;
-+---------------------------------------------------------------------------------------------------------------+
-; C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/output_files/Caminho_FPGA.sof ;
-+---------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                        ;
++------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                        ;
++------------------------------------------------------------------------------------------------------------------+
+; C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_TESTE/output_files/Caminho_FPGA.sof ;
++------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_01/output_files/Caminho_FPGA.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                ;
-+----------------+------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00793E00                                                                                                             ;
-; Checksum       ; 0x00793E00                                                                                                             ;
-+----------------+------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/itall/OneDrive/Documentos/Meus Projetos/Caminho-de-dados-RISCV/FPGA_TESTE/output_files/Caminho_FPGA.sof ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                   ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00712296                                                                                                                ;
+; Checksum       ; 0x00712296                                                                                                                ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun 21 14:28:12 2023
+    Info: Processing started: Tue Jun 27 13:46:17 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Caminho_FPGA -c Caminho_FPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4692 megabytes
-    Info: Processing ended: Wed Jun 21 14:28:15 2023
+    Info: Peak virtual memory: 4687 megabytes
+    Info: Processing ended: Tue Jun 27 13:46:20 2023
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

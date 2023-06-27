@@ -78,7 +78,7 @@ module main(clk, rst, display1, display2, display3, display4, display5, LCD_en, 
 	 
 	//LCD
 	output LCD_en, LCD_rw, LCD_rs, LCD_blon;
-    output [7:0] LCD_data;
+   output [7:0] LCD_data;
 	
 	
     //calcular o endereço
@@ -123,11 +123,12 @@ module main(clk, rst, display1, display2, display3, display4, display5, LCD_en, 
 
     //modulo display
     //no campo .register deve ser colocado o registrador que se deseja mostrar no display
-	display display(.pc(pc), .register(reg1), .final(final), .display1(display1), .display2(display2), 
-    .display3(.display3), .display4(display4), .display5(display5), .clk(clk));
+	display display (.pc(pc), .register(reg1), .final(final), .display1(display1), .display2(display2), 
+	.display3(display3), .display4(display4), .display5(display5), .clk(clk));
 	
 	//LCD
-	LCD LCD(.clk(clk), .LCD_data(LCD_data), .LCD_en(LCD_en), .LCD_rw(LCD_rw), .LCD_rs(LCD_rs), .LCD_blon(LCD_blon));
+	lcdd(.clk(clk), .LCD_data(LCD_data), .LCD_en(LCD_en), .LCD_rw(LCD_rw), .LCD_rs(LCD_rs), .LCD_blon(LCD_blon),
+	.rst(rst));
     //maquina de estados
     always @(posedge clk) begin
         // rst ativo para incialização das variáveis
