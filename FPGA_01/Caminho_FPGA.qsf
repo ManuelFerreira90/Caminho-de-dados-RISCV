@@ -99,7 +99,6 @@ set_location_assignment PIN_AG21 -to display5[2]
 set_location_assignment PIN_AA19 -to display5[1]
 set_location_assignment PIN_AB19 -to display5[0]
 set_location_assignment PIN_M21 -to rst
-set_global_assignment -name VERILOG_FILE output_files/lcdd.v
 set_location_assignment PIN_L6 -to LCD_blon
 set_location_assignment PIN_M5 -to LCD_data[7]
 set_location_assignment PIN_M3 -to LCD_data[6]

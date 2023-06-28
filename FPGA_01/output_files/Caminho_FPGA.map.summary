@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 27 14:16:33 2023
+Analysis & Synthesis Status : Successful - Wed Jun 28 15:29:20 2023
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : Caminho_FPGA
 Top-level Entity Name : main
 Family : Cyclone IV E
-Total logic elements : 2,827
-    Total combinational functions : 2,745
-    Dedicated logic registers : 1,479
-Total registers : 1479
-Total pins : 49
+Total logic elements : 3,525
+    Total combinational functions : 3,463
+    Dedicated logic registers : 1,709
+Total registers : 1709
+Total pins : 37
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
