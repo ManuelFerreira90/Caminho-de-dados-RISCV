@@ -106,7 +106,7 @@
             mostra os displays representando o program counter.
 
         O program counter e o registrador escolhido para mostrar nos displays são mostrados 
-        corretamente valores de 0 a 99.
+        corretamente valores de 0 a 255, em formato hexadecimal.
 
         Na linhas 116 do arquivo main.v poderá ser escolhido o registrador a 
         ser mostrado nos display.
