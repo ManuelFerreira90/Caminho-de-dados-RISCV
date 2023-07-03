@@ -9,7 +9,7 @@ module lerinstrucao (instrucao, pc, clk, estado, rst);
     // Atualizando instrução a cada ciclo de clock
     always @(posedge clk) begin
         if(rst == 1'b1) begin
-			  
+                //instrução_01
 				instrucoes [0] <= 32'b00000000000000001010000000000011;
 				instrucoes [1] <= 32'b00000000001000011010001000100011;
 				instrucoes [2] <= 32'b01000000010100101000001010110011;
@@ -22,14 +22,14 @@ module lerinstrucao (instrucao, pc, clk, estado, rst);
 				instrucoes [9] <= 32'b00000000001000101000001010010011;
 				instrucoes [10] <= 32'b00000000000000000000000000000000;
 		  
-		  //
+		        //instrução_02 
 //				instrucoes [0] <= 32'b00000000010100111000001110010011;
 //				instrucoes [1] <= 32'b11111111111100111000001110010011;
 //				instrucoes [2] <= 32'b11111110000000111001111011100011;
 //				instrucoes [3] <= 32'b00000000000000000000000000000000;
-				
-				// SLIDE //
-//          instrucoes [0] <= 32'b00000000011100000000000100010011;
+//			
+				//instrução_03 - Exemplo da documentação do TP
+//              instrucoes [0] <= 32'b00000000011100000000000100010011;
 //				instrucoes [1] <= 32'b00000000001000000010001000100011;
 //				instrucoes [2] <= 32'b00000000010000000010000010000011;
 //				instrucoes [3] <= 32'b00000000000000001000000100110011;
@@ -44,7 +44,7 @@ module lerinstrucao (instrucao, pc, clk, estado, rst);
 //				instrucoes [12] <= 32'b00000000000000001110000010110011;
 //				instrucoes [13] <= 32'b00000000000100000010000000100011;
 //				instrucoes [14] <= 32'b00000000000000000000000000000000;
-//				instrucoes [15] <= 32'b00000000000000000000000000000000;
+
         end
         if(estado == 4'b0000)begin
             instrucao <= instrucoes[pc];
