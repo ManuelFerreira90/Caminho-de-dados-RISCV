@@ -52,14 +52,6 @@
             mas esse monstador não aceita rótulo  então nas função de branch forneça o imediato
             para onde o desvio será tomado, e também as instruções AND, OR, ADD.
 
-        Execução das instruções:
-        addi x7, x7, 5
-        loop:
-        addi x7, x7, -1
-        bne x7, x0, loop 
-<div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/532afe02-6da2-4260-aee6-1041de11a088">
-</div>
 
         Execução das instruções:
         addi x2, x0, 7
@@ -79,10 +71,10 @@
         sw x1, 0(x0)
 
 <div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/aae3f3c5-9a7a-42c6-be0b-950ab7f3f0e5">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/26924012-48fb-4a5e-87e8-aa1026d597f9">
 </div>
 <div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/7aecd68f-3509-4f30-908f-a50df1542764">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/378e54d6-5222-452c-9772-0631bc94c8c4">
 </div>
 
     Implementação na FPGA:
