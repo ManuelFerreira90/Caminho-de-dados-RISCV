@@ -35,9 +35,6 @@
                          xor x6, x6, x6
                 serão executadas 3 instruções mais a instrução 0 (usada para sinalizar onde acaba 
                 as instruções) totalizando 4 instruções - 1, tamanho do array igual a 3. 
-<div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ae990cf0-05c0-4621-a2b7-34f76d1be31c">
-</div>
       
         Limitação: a memória so contém apenas 32 posições e acessos para endereços maiores que 32 
                     o valor não sera computado, pois contamos com apenas 32 posições de memória.
@@ -83,7 +80,7 @@
         
         visão geral do nosso projeto em uma FPGA.
 <div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/2acee134-c46b-4fb9-be69-2c7e3a6e655c">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/7197bb21-0cba-4c42-9cd5-4d507065d45f">
 </div>
 
         Seta 1:
@@ -104,5 +101,5 @@
         ser mostrado nos display.
         
 <div align="center">
-<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/ab257b93-627e-4058-9581-2ab566931824">
+<img src="https://github.com/ManuelFerreira90/Caminho-de-dados-RISCV/assets/105729881/6d81da1d-cb8a-4fd4-a14c-bac299005909">
 </div>
